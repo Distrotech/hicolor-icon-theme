@@ -1,3 +1,14 @@
+2005-02-02  Alexander Larsson  <alexl@redhat.com>
+
+	* configure.ac:
+	Bump version to 0.6
+
+	* Makefile.in (ICON_SIZES):
+	Add 24x24 dirs
+
+	* index.theme (Directories):
+	Add 24x24 version of action, apps, devices, filesystem & mimetypes
+
 2004-04-06  Alexander Larsson  <alexl@redhat.com>
 
 	* configure.ac:
