@@ -1,6 +1,9 @@
+VERSION=0.1
 PREFIX=/usr/local
 DESTDIR=
 INSTALL=install
+
+FILES=index.theme  Makefile README ChangeLog
 
 install:
 	mkdir -p $(DESTDIR)$(PREFIX)/icons/default
@@ -10,3 +13,11 @@ install:
 	    mkdir -p $(DESTDIR)$(PREFIX)/icons/default/$$dir/$$ctxt; \
 	  done \
         done
+
+dist:
+	rm -rf default-icon-theme-$(VERSION)
+	mkdir default-icon-theme-$(VERSION)
+	cp $(FILES) default-icon-theme-$(VERSION)
+	tar czvf default-icon-theme-$(VERSION).tar.gz default-icon-theme-$(VERSION)
+	rm -rf default-icon-theme-$(VERSION)
+
