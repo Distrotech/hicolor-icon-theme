@@ -125,7 +125,7 @@
     <para>
     The image files must be one of the types: PNG, XPM, or SVG, and
     the extension must be ".png", ".xpm", or ".svg" (lower case). The
-    support for SVG files is optional. Implemenations that does not
+    support for SVG files is optional. Implementations that do not
     support SVGs should just ignore any ".svg" files. In
     addition to this there may be an additional file with extra
     icon-data for each file. It should have the same basename as the
@@ -140,11 +140,11 @@
     <para>
     Both the icon theme description file and the icon data files are
     ini-style text files, as described in the desktop file
-    specification. They don't have any encoding field, instead they 
+    specification. They don't have any encoding field. Instead they 
     must always be stored in UTF8 encoding.
     </para>
     <para>
-    The index.theme file must starts with a section called "Icon
+    The index.theme file must start with a section called "Icon
     Theme", with contents according to table 1 below. All lists are
     comma-separated.
     <table>
@@ -232,7 +232,7 @@
     with the same name as the directory. The contents of this section is
     listed in table 2 below.
     <table>
-      <title>Per Directory Keys</title>
+      <title>Per-Directory Keys</title>
       <tgroup cols="4">
 	<thead>
 	  <row>
@@ -346,11 +346,11 @@
 	  <row>
 	    <entry>EmbeddedTextRectangle</entry>
 	    <entry>
-              If this exist it specifies the four corners of a
+              If this exists, it specifies the four corners of a
               rectangle where the program displaying the icon can
-              embedd text. This is normally used by e.g. file managers
+              embed text. This is normally used by e.g. file managers
               that want to display a preview of text file contents in
-              the icon. The corners are specified by a list of for
+              the icon. The corners are specified by a list of four
               values: x0,y0,x1,y1. The values are pixel coordinates
               from the top left corner of the icon, except for SVG
               files, where they are specified in a 1000x1000
@@ -551,9 +551,9 @@ AttachPoints=20,20|40,40|50,10|10,50</programlisting>
   </sect1>
 
   <sect1 id="install_icons">
-    <title>Installing application icons</title>
+    <title>Installing Application Icons</title>
     <para>
-    So, You're an application author, and want to install application icons
+    So, you're an application author, and want to install application icons
     so that they work in the KDE and Gnome menus. Minimally you should install
     a 48x48 icon in the hicolor theme. This means installing a PNG file in
     $prefix/share/icons/hicolor/48x48/apps. Optionally you can install icons in different
@@ -573,7 +573,7 @@ AttachPoints=20,20|40,40|50,10|10,50</programlisting>
   <sect1 id="implementation_notes">
     <title>Implementation Notes</title>
     <para>
-    The algorithms as described in this document works by always
+    The algorithm as described in this document works by always
     looking up filenames in directories (a stat in unix
     terminology). A good implementation is expected to read the
     directories once, and do all lookups in memory using that
@@ -591,8 +591,37 @@ AttachPoints=20,20|40,40|50,10|10,50</programlisting>
     </para>
   </sect1>
 
+  <sect1 id="background">
+    <title>Background</title>
+    <para>
+    The icon theme specification is based on the original
+    KDE icon theme system designed by Antonio Larossa,
+    Geert Janssen and Torsten Rahn. The common specification
+    mostly adds support for .icon files, renames the icon theme
+    description files and removes a few references to kde in them.
+    </para>
+  </sect1>
+  
   <appendix id="changes">
     <title>Change history</title>
+    <formalpara>
+      <title>Version 0.8, 5 February 2004, Alexander Larsson</title>    
+      <para>
+	<itemizedlist>
+	  <listitem>
+	    <para>
+            Fix language problems as pointed out by Rodney Dawes and
+            Michael Terry.
+	    </para>
+	  </listitem>
+	  <listitem>
+	    <para>
+            Added background section.
+	    </para>
+	  </listitem>
+	</itemizedlist>
+      </para>
+    </formalpara>
     <formalpara>
       <title>Version 0.7, 13 September 2003, Heinrich Wendel</title>    
       <para>
