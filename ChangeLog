@@ -1,3 +1,11 @@
+2005-02-04  Alexander Larsson  <alexl@redhat.com>
+
+	* configure.ac:
+	Bump version to 0.7
+
+	* index.theme (Size):
+	Fix typos in last version
+
 2005-02-02  Alexander Larsson  <alexl@redhat.com>
 
 	* configure.ac:
