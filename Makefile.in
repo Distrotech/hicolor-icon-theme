@@ -1,0 +1,46 @@
+PACKAGE = @PACKAGE_TARNAME@
+VERSION = @PACKAGE_VERSION@
+prefix = @prefix@
+datadir = @datadir@
+INSTALL = @INSTALL@
+INSTALL_DATA = @INSTALL_DATA@
+
+distdir = $(PACKAGE)-$(VERSION)
+FILES = README Makefile.in configure.ac configure install-sh index.theme ChangeLog
+
+ICON_SIZES = 16x16 22x22 32x32 36x36 48x48 64x64 72x72 96x96 \
+  128x128 192x192 scalable
+ICON_CONTEXTS = actions apps devices filesystems mimetypes
+
+all:
+	@:
+
+install:
+	mkdir -p $(DESTDIR)$(datadir)/icons/hicolor
+	$(INSTALL_DATA) index.theme $(DESTDIR)$(datadir)/icons/hicolor
+	for dir in $(ICON_SIZES); do \
+	  for ctxt in $(ICON_CONTEXTS); do \
+	    mkdir -p $(DESTDIR)$(datadir)/icons/hicolor/$$dir/$$ctxt; \
+	  done \
+        done
+
+dist:
+	rm -rf $(distdir)
+	mkdir $(distdir)
+	cp $(FILES) $(distdir)
+	tar czvf $(distdir).tar.gz $(distdir)
+	rm -rf $(distdir)
+
+tag:
+	cvs tag DEFAULT_ICON_THEME_`echo $(VERSION)|sed "s/\./_/"`
+
+# cause rebuilds
+Makefile: Makefile.in config.status
+	./config.status Makefile
+configure: configure.ac
+	autoconf
+config.status: configure
+	./configure.status --recheck
+
+.PHONY: all install dist tag
+
