@@ -1,4 +1,11 @@
 2002-05-14  Alex Larsson  <alexl@redhat.com>
 
+	* Makefile (tag):
+	Added a tag target.
+	
+2002-05-14  Alex Larsson  <alexl@redhat.com>
+
 	* Makefile (dist):
 	Added a dist target.
+	
+

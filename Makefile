@@ -21,3 +21,5 @@ dist:
 	tar czvf default-icon-theme-$(VERSION).tar.gz default-icon-theme-$(VERSION)
 	rm -rf default-icon-theme-$(VERSION)
 
+tag:
+	cvs tag DEFAULT_ICON_THEME_`echo $(VERSION)|sed "s/\./_/"`
