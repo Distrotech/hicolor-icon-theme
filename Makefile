@@ -4,7 +4,7 @@ DATADIR=$(PREFIX)/share
 DESTDIR=
 INSTALL=install
 
-FILES=index.theme  Makefile README ChangeLog
+FILES=index.theme  Makefile README ChangeLog COPYING
 
 install:
 	mkdir -p $(DESTDIR)$(DATADIR)/icons/hicolor
