@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
-<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" 
-"http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd" [
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN" 
+"http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd" [
 ]>
 <article id="index">
   <articleinfo>
@@ -14,6 +14,15 @@
 	<affiliation>
 	  <address>
 	    <email>alexl@redhat.com</email>
+	  </address>
+	</affiliation>
+      </author>
+      <author>
+	<firstname>Frans</firstname>
+	<surname>Englich</surname>
+	<affiliation>
+	  <address>
+	    <email>frans.englich@telia.com</email>
 	  </address>
 	</affiliation>
       </author>
@@ -95,7 +104,7 @@
     their icons there should always exist a theme called "hicolor"
     <footnote><para>This name is chosen for backwards compatibility with the old
     KDE default theme</para></footnote>.
-    The data for the hicolor theme is availible for download at:
+    The data for the hicolor theme is available for download at:
     http://www.freedesktop.org/software/icon-theme/.
     Implementations are required to look in the "hicolor" theme if
     an icon was not found in the current theme.
@@ -140,12 +149,12 @@
     <para>
     Both the icon theme description file and the icon data files are
     ini-style text files, as described in the desktop file
-    specification. They don't have any encoding field. Instead they 
-    must always be stored in UTF8 encoding.
+    specification. They don't have any encoding field. Instead, they 
+    must always be stored in UTF-8 encoding.
     </para>
     <para>
-    The index.theme file must start with a section called "Icon
-    Theme", with contents according to table 1 below. All lists are
+    The index.theme file must start with a section called <citetitle>Icon
+    Theme</citetitle>, with contents according to table 1 below. All lists are
     comma-separated.
     <table>
       <title>Standard Keys</title>
@@ -255,10 +264,8 @@
 	  <row>
 	    <entry>Context</entry>
 	    <entry>
-              the context the icon is normally used in. This can be
-              used to e.g. let the user pick an specific type of
-              icon. Currently used contexts are: Actions,
-              Applications, Devices, FileSystems, MimeTypes.
+              The context the icon is normally used in. This 
+              is in detail discussed in <xref linkend="context"/>.
 	    </entry>
 	    <entry>string</entry>
 	    <entry>NO</entry>
@@ -382,6 +389,56 @@
     keys must be begin with "X-" to avoid collisions with future
     standardized extensions to this format.
     </para>
+
+    <sect2 id="context">
+	<title>Context</title>
+
+	<para>The <systemitem>Context</systemitem> allows 
+    	  the designer to group icons on a conceptual level. 
+	  It doesn't act as a namespace in the file system, such 
+	  that icons can have identical names, but allows 
+	  implementations to categorize and sort by it, for example.
+ 	</para>
+
+	<para>These are the available contexts:</para>
+	<itemizedlist>
+
+	  <listitem>
+	    <formalpara>
+	    <title>Actions</title>
+	    <para>Icons representing actions which the user initiates, such as <action>Save As</action>.</para>
+	    </formalpara>
+	  </listitem>
+
+	  <listitem>
+	    <formalpara>
+	    <title>Devices</title>
+	    <para>Icons representing real world devices, 
+		    such as printers and mice. It's not for 
+		    file system nodes such as character or block devices.</para>
+	    </formalpara>
+	  </listitem>
+
+	  <listitem>
+	    <formalpara>
+	      <title>FileSystems</title>
+	      <para>Icons for objects which are represented as 
+		 part of the file system. This is for example, 
+		 the local network, <quote>Home</quote>, 
+		 and <quote>Desktop</quote> folders.</para>
+	    </formalpara>
+	  </listitem>
+
+	  <listitem>
+	  <formalpara>
+	  <title>MimeTypes</title>
+	  <para>Icons representing MIME types.</para>
+	  </formalpara>
+	  </listitem>
+
+	</itemizedlist>
+		
+    </sect2>
   </sect1>
 
   <sect1 id="icon_lookup">
@@ -394,12 +451,12 @@
     </para>
     <para>
     The lookup is done first in the current theme, and then
-    recursively in each of the themes inherited the current theme, and
+    recursively in each of the current theme's parents, and
     finally in the default theme called "hicolor" (implementations may
     add more default themes before "hicolor", but "hicolor" must be
     last). As soon as there is an icon of any size that matches in a
-    theme the search is stopped. Even if there may be an icon with a
-    size closer to the correct one in an inherited theme we don't want
+    theme, the search is stopped. Even if there may be an icon with a
+    size closer to the correct one in an inherited theme, we don't want
     to use it. Doing so may generate an inconsistant change in an icon
     when you change icon sizes (e.g. zoom in).
     </para>
@@ -581,7 +638,7 @@ AttachPoints=20,20|40,40|50,10|10,50</programlisting>
     </para>
     <para>
     This caching can make it impossible for users to add icons without
-    having to restart applications. In order to handle this any
+    having to restart applications. In order to handle this, any
     implementation that does caching is required to look at the mtime
     of the toplevel icon directories when doing a cache lookup, unless
     it already did so less than 5 seconds ago. This means that any
@@ -604,6 +661,25 @@ AttachPoints=20,20|40,40|50,10|10,50</programlisting>
   
   <appendix id="changes">
     <title>Change history</title>
+    <formalpara>
+      <title>Version 0.9, 4 April 2005, Alexander Larsson</title>    
+      <para>
+	<itemizedlist>
+	  <listitem>
+	    <para>
+            Cleanups and fixes to language from Rodney Dawes and
+            Frans Englich.
+	    </para>
+	  </listitem>
+	  <listitem>
+	    <para>
+            Added section describing Contexts in more details (by
+            Frans Englich).
+	    </para>
+	  </listitem>
+	</itemizedlist>
+      </para>
+    </formalpara>
     <formalpara>
       <title>Version 0.8, 5 February 2004, Alexander Larsson</title>    
       <para>
@@ -628,7 +704,7 @@ AttachPoints=20,20|40,40|50,10|10,50</programlisting>
 	<itemizedlist>
 	  <listitem>
 	    <para>
-            Convertet to basedir spec.
+            Converted to basedir spec.
 	    </para>
 	  </listitem>
 	  <listitem>
