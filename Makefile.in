@@ -40,7 +40,7 @@ Makefile: Makefile.in config.status
 configure: configure.ac
 	autoconf
 config.status: configure
-	./configure.status --recheck
+	./config.status --recheck
 
 .PHONY: all install dist tag
 
