@@ -1,4 +1,4 @@
-VERSION=0.2
+VERSION=0.3
 PREFIX=/usr/local
 DATADIR=$(PREFIX)/share
 DESTDIR=
@@ -9,7 +9,7 @@ FILES=index.theme  Makefile README ChangeLog
 install:
 	mkdir -p $(DESTDIR)$(DATADIR)/icons/hicolor
 	$(INSTALL) index.theme $(DESTDIR)$(DATADIR)/icons/hicolor
-	for dir in 16x16 22x22 32x32 48x48 64x64 96x96 128x128 scalable; do \
+	for dir in 16x16 22x22 32x32 36x36 48x48 64x64 72x72 96x96 128x128 192x192 scalable; do \
 	  for ctxt in actions apps devices filesystems mimetypes; do \
 	    mkdir -p $(DESTDIR)$(DATADIR)/icons/hicolor/$$dir/$$ctxt; \
 	  done \
