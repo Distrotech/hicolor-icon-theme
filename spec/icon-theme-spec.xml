@@ -5,8 +5,8 @@
 <article id="index">
   <articleinfo>
     <title>Icon Theme Specification</title>
-    <releaseinfo>Version 0.6</releaseinfo>
-    <date>December 2 2002</date>
+    <releaseinfo>Version 0.7</releaseinfo>
+    <date>September 22 2003</date>
     <authorgroup>
       <author>
 	<firstname>Alexander</firstname>
@@ -80,8 +80,9 @@
     <title>Directory Layout</title>
     <para>
     Icons and themes are looked for in a set of directories. By
-    default, apps should look in $HOME/.icons, /usr/share/icons and
-    /usr/share/pixmaps (in that order). Applications may further add
+    default, apps should look in $HOME/.icons (for backwards compatibility),
+    in $XDG_DATA_DIRS/icons and in /usr/share/pixmaps (in that order).
+    Applications may further add
     their own icon directories to this list, and users may extend or
     change the list (in application/desktop specific ways).In each of
     these directories themes are stored as subdirectories. A theme can
@@ -95,7 +96,7 @@
     <footnote><para>This name is chosen for backwards compatibility with the old
     KDE default theme</para></footnote>.
     The data for the hicolor theme is availible for download at:
-    http://www.freedesktop.org/standards/icon-theme-spec.html.
+    http://www.freedesktop.org/software/icon-theme/.
     Implementations are required to look in the "hicolor" theme if
     an icon was not found in the current theme.
     </para>
@@ -190,7 +191,7 @@
               specified theme and the hicolor theme.
               </para>
 	    </entry>
-	    <entry>strings</entry >
+	    <entry>strings</entry>
 	    <entry>NO</entry>
 	  </row>
 	  <row>
@@ -200,7 +201,7 @@
              subdirectory there must be a section in the index.theme
              file describing that directory.
 	    </entry>
-	    <entry>strings</entry >
+	    <entry>strings</entry>
 	    <entry>YES</entry>
 	  </row>
 	  <row>
@@ -210,7 +211,7 @@
             This is used for things such as fallback-themes that are not supposed
             to be visible to the user.
 	    </entry>
-	    <entry>boolean</entry >
+	    <entry>boolean</entry>
 	    <entry>NO</entry>
 	  </row>
 	  <row>
@@ -281,7 +282,7 @@
               directory can be scaled to. Defaults to the value
               of Size if not present.
 	    </entry>
-	    <entry>string</entry>
+	    <entry>integer</entry>
 	    <entry>NO</entry>
 	    <entry>Scalable</entry>
 	  </row>
@@ -292,7 +293,7 @@
               directory can be scaled to. Defaults to the value
               of Size if not present.
 	    </entry>
-	    <entry>string</entry>
+	    <entry>integer</entry>
 	    <entry>NO</entry>
 	    <entry>Scalable</entry>
 	  </row>
@@ -303,7 +304,7 @@
               at most this much from the desired size. Defaults to 2 if not
               present.
 	    </entry>
-	    <entry>string</entry>
+	    <entry>integer</entry>
 	    <entry>NO</entry>
 	    <entry>Threshold</entry>
 	  </row>
@@ -419,7 +420,7 @@ for each subdir in $(theme subdir list) {
     for each directory in $(basename list) {
         for extension in ("png", "svg", "xpm") {
             if DirectoryMatchesSize(subdir, size) {
-                filename = directory/$(themename)/subdirectory/iconname.extension
+                filename = directory/$(themename)/subdir/iconname.extension
                 if exist filename
 	            return filename
             }
@@ -431,7 +432,7 @@ minimal_size = MAXINT
 for each subdir in $(theme subdir list) {
     for each directory in $(basename list) {
         for extension in ("png", "svg", "xpm") {
-            filename = directory/$(themename)/subdirectory/iconname.extension
+            filename = directory/$(themename)/subdir/iconname.extension
             if exist filename and DirectorySizeDistance(subdir, size) &lt; minimal_size
 	        closest_filename = filename
 		minimal_size = DirectorySizeDistance(subdir, size)
@@ -592,6 +593,33 @@ AttachPoints=20,20|40,40|50,10|10,50</programlisting>
 
   <appendix id="changes">
     <title>Change history</title>
+    <formalpara>
+      <title>Version 0.7, 13 September 2003, Heinrich Wendel</title>    
+      <para>
+	<itemizedlist>
+	  <listitem>
+	    <para>
+            Convertet to basedir spec.
+	    </para>
+	  </listitem>
+	  <listitem>
+	    <para>
+            Changed type of MaxSize, MinSize and Threshold to integer.
+	    </para>
+	  </listitem>
+	  <listitem>
+	    <para>
+            Removed typo in code example.
+	    </para>
+	  </listitem>
+	  <listitem>
+	    <para>
+            Corrected path to default-icon-theme.
+	    </para>
+	  </listitem>
+	</itemizedlist>
+      </para>
+    </formalpara>
     <formalpara>
       <title>Version 0.6, 2 December 2002, Alexander Larsson</title>    
       <para>
