@@ -1,5 +1,10 @@
 2004-02-11  Alexander Larsson  <alexl@redhat.com>
 
+	* Makefile.in:
+	Added back COPYING
+	
+2004-02-11  Alexander Larsson  <alexl@redhat.com>
+
 	* Makefile:
 	* Makefile.in:
 	* configure.ac:

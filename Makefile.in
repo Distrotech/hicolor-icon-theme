@@ -6,7 +6,7 @@ INSTALL = @INSTALL@
 INSTALL_DATA = @INSTALL_DATA@
 
 distdir = $(PACKAGE)-$(VERSION)
-FILES = README Makefile.in configure.ac configure install-sh index.theme ChangeLog
+FILES = README Makefile.in configure.ac configure install-sh index.theme ChangeLog COPYING
 
 ICON_SIZES = 16x16 22x22 32x32 36x36 48x48 64x64 72x72 96x96 \
   128x128 192x192 scalable
