@@ -2,7 +2,7 @@ This is the default fallback theme used by implementations of the icon
 theme specification.
 
 The specification is availible at:
-http://www.freedesktop.org/standards/icon-theme-spec.html
+http://www.freedesktop.org/standards/icon-theme-spec/
 
 To install this package in /usr just run:
 make PREFIX=/usr
