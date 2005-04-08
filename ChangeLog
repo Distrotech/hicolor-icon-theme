@@ -1,6 +1,14 @@
 2005-02-04  Alexander Larsson  <alexl@redhat.com>
 
 	* configure.ac:
+	Bump version to 0.8
+
+	* index.theme:
+	Add emblem subdir
+
+2005-02-04  Alexander Larsson  <alexl@redhat.com>
+
+	* configure.ac:
 	Bump version to 0.7
 
 	* index.theme (Size):
