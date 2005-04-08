@@ -1,4 +1,7 @@
-2005-02-04  Alexander Larsson  <alexl@redhat.com>
+2005-04-08  Alexander Larsson  <alexl@redhat.com>
+
+	* Makefile.in (ICON_CONTEXTS): 
+	Add emblem subdir
 
 	* configure.ac:
 	Bump version to 0.8
