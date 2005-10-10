@@ -214,7 +214,7 @@
 	  </row>
 	  <row>
 	    <entry>contact-new</entry>
-              This is the icon used for the action to create a new contact
+              The icon used for the action to create a new contact
               in an address book application.
 	    <entry>
 	    </entry>
@@ -923,6 +923,18 @@
 	    </entry>
 	  </row>
 	  <row>
+	    <entry>preferences-desktop-accessibility</entry>
+	    <entry>
+	      The icon used for the desktop's accessibility preferences.
+	    </entry>
+	  </row>
+	  <row>
+	    <entry>preferences-desktop-font</entry>
+	    <entry>
+	      The icon used for the desktop's font preferences.
+	    </entry>
+	  </row>
+	  <row>
 	    <entry>preferences-desktop-keyboard</entry>
 	    <entry>
 	      The icon used for the desktop's keyboard preferences.
@@ -1145,7 +1157,7 @@
 	    </entry>
 	  </row>
 	  <row>
-	    <entry>drive-cddrom</entry>
+	    <entry>drive-cdrom</entry>
 	    <entry>
 	      The icon used for CD and DVD drives.
 	    </entry>
@@ -1450,6 +1462,12 @@
 	    </entry>
 	  </row>
 	  <row>
+	    <entry>font-x-generic</entry>
+	    <entry>
+	      The icon used for generic font file types.
+	    </entry>
+	  </row>
+	  <row>
 	    <entry>image-x-generic</entry>
 	    <entry>
 	      The icon used for generic image file types.
@@ -1518,12 +1536,6 @@
 	    </entry>
 	  </row>
 	  <row>
-	    <entry>x-font-generic</entry>
-	    <entry>
-	      The icon used for generic font file types.
-	    </entry>
-	  </row>
-	  <row>
 	    <entry>x-office-address-book</entry>
 	    <entry>
 	      The icon used for generic address book file types.
@@ -1588,7 +1600,7 @@
 	  <row>
 	    <entry>battery-low</entry>
 	    <entry>
-	      The icon used when the battery is beloew 20%.
+	      The icon used when the battery is below 20%.
 	    </entry>
 	  </row>
 	  <row>
@@ -1624,6 +1636,19 @@
 	    <entry>
 	      The icon used when a dialog is opened to warn the user of
 	      impending issues with the requested action.
+	    </entry>
+	  </row>
+	  <row>
+	    <entry>image-loading</entry>
+	    <entry>
+	      The icon used when another image is being loaded, such as
+              thumnails for larger images in the file manager.
+	    </entry>
+	  </row>
+	  <row>
+	    <entry>image-missing</entry>
+	    <entry>
+	      The icon used when another image could not be loaded.
 	    </entry>
 	  </row>
 	  <row>
@@ -1835,6 +1860,41 @@
   <appendix id="changelog">
     <title>Change History</title>
     <formalpara>
+      <title>Version 0.4, 10 October 2005, Rodney Dawes</title>    
+      <para>
+	<itemizedlist>
+	  <listitem>
+	    <para>
+              Use "The icon" instead of "This icon" for "contact-new" and
+              "battery-low"
+	    </para>
+          </listitem>
+          <listitem>
+	    <para>
+	      Add icons for "preferences-desktop-accessibility" and
+              "preferences-desktop-font" in the apps context
+	    </para>
+	  </listitem>
+          <listitem>
+            <para>
+              Fix typo in "drive-cdrom" name
+            </para>
+          </listitem>
+          <listitem>
+            <para>
+              Rename "x-font-generic" to "font-x-generic" to match other MIME
+              type icons such as for audio, images, and video
+            </para>
+          </listitem>
+          <listitem>
+	    <para>
+	      Add icons for "image-loading" and "image-missing" to status
+	    </para>
+	  </listitem>
+	</itemizedlist>
+      </para>
+    </formalpara>
+    <formalpara>
       <title>Version 0.3, 28 June 2005, Rodney Dawes</title>    
       <para>
 	<itemizedlist>
@@ -1842,6 +1902,8 @@
 	    <para>
               Replace "printer-local" with "printer" to be more generic.
 	    </para>
+          </listitem>
+          <listitem>
 	    <para>
 	      Import into freedesktop.org cvs alongside icon-theme-spec.xml
 	    </para>
