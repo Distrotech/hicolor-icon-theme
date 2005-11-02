@@ -5,8 +5,8 @@
 <article id="index">
   <articleinfo>
     <title>Icon Naming Specification</title>
-    <releaseinfo>Version 0.3</releaseinfo>
-    <date>June 28 2005</date>
+    <releaseinfo>Version 0.4</releaseinfo>
+    <date>October 10 2005</date>
     <authorgroup>
       <author>
 	<firstname>Rodney</firstname>
@@ -214,9 +214,9 @@
 	  </row>
 	  <row>
 	    <entry>contact-new</entry>
+	    <entry>
               The icon used for the action to create a new contact
               in an address book application.
-	    <entry>
 	    </entry>
 	  </row>
 	  <row>
