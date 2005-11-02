@@ -849,77 +849,10 @@
 	    </entry>
 	  </row>
 	  <row>
-	    <entry>internet-group-chat</entry>
-	    <entry>
-	      The icon used for the desktop's group chat application.
-	    </entry>
-	  </row>
-	  <row>
-	    <entry>internet-instant-messenger</entry>
-	    <entry>
-	      The icon used for the desktop's instant messaging application.
-	    </entry>
-	  </row>
-	  <row>
-	    <entry>internet-mail</entry>
-	    <entry>
-	      The icon used for the desktop's electronic mail application.
-	    </entry>
-	  </row>
-	  <row>
-	    <entry>internet-web-browser</entry>
-	    <entry>
-	      The icon used for the desktop's web browsing application.
-	    </entry>
-	  </row>
-	  <row>
-	    <entry>multimedia-player-audio</entry>
-	    <entry>
-	      The icon used for the desktop's audio playing application.
-	    </entry>
-	  </row>
-	  <row>
-	    <entry>multimedia-player-video</entry>
-	    <entry>
-	      The icon used for the desktop's video playing application.
-	    </entry>
-	  </row>
-	  <row>
 	    <entry>multimedia-volume-control</entry>
 	    <entry>
 	      The icon used for the desktop's hardware volume control
 	      application.
-	    </entry>
-	  </row>
-	  <row>
-	    <entry>office-address-book</entry>
-	    <entry>
-	      The icon used for the desktop's address book management
-	      application.
-	    </entry>
-	  </row>
-	  <row>
-	    <entry>office-calendar</entry>
-	    <entry>
-	      The icon used for the desktop's calendar management application.
-	    </entry>
-	  </row>
-	  <row>
-	    <entry>office-presentation</entry>
-	    <entry>
-	      The icon used for the desktop's presentation application.
-	    </entry>
-	  </row>
-	  <row>
-	    <entry>office-spreadsheet</entry>
-	    <entry>
-	      The icon used for the desktop's spreadsheet application.
-	    </entry>
-	  </row>
-	  <row>
-	    <entry>office-word-processor</entry>
-	    <entry>
-	      The icon used for the desktop's word processing application.
 	    </entry>
 	  </row>
 	  <row>
