@@ -183,7 +183,7 @@
       which will use the Icon Theme Specification.
     </para>
 
-    <table>
+    <table id="actions">
       <title>Standard Action Icons</title>
       <tgroup cols="2">
 	<thead>
@@ -807,7 +807,7 @@
       </tgroup>
     </table>
 
-    <table>
+    <table id="apps">
       <title>Standard Application Icons</title>
       <tgroup cols="2">
 	<thead>
@@ -925,7 +925,7 @@
       </tgroup>
     </table>
 
-    <table>
+    <table id="categories">
       <title>Standard Category Icons</title>
       <tgroup cols="2">
 	<thead>
@@ -1061,7 +1061,7 @@
       </tgroup>
     </table>
 
-    <table>
+    <table id="devices">
       <title>Standard Device Icons</title>
       <tgroup cols="2">
 	<thead>
@@ -1153,7 +1153,7 @@
       </tgroup>
     </table>
 
-    <table>
+    <table id="emblems">
       <title>Standard Emblem Icons</title>
       <tgroup cols="2">
 	<thead>
@@ -1258,7 +1258,7 @@
       </tgroup>
     </table>
 
-    <table>
+    <table id="emotes">
       <title>Standard Emotion Icons</title>
       <tgroup cols="2">
 	<thead>
@@ -1356,7 +1356,7 @@
       </tgroup>
     </table>
 
-    <table>
+    <table id="intl">
       <title>Standard International Icons</title>
       <tgroup cols="2">
 	<thead>
@@ -1378,7 +1378,7 @@
       </tgroup>
     </table>
 
-    <table>
+    <table id="mimetypes">
       <title>Standard MIME Type Icons</title>
       <tgroup cols="2">
 	<thead>
@@ -1502,7 +1502,7 @@
       </tgroup>
     </table>
 
-    <table>
+    <table id="status">
       <title>Standard Status Icons</title>
       <tgroup cols="2">
 	<thead>
