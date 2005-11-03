@@ -1078,6 +1078,12 @@
 	    </entry>
 	  </row>
 	  <row>
+	    <entry>audio-input-microphone</entry>
+	    <entry>
+	      The icon used for the microphone audio input device.
+	    </entry>
+	  </row>
+	  <row>
 	    <entry>camera-video</entry>
 	    <entry>
 	      The icon used for a video or web camera.
