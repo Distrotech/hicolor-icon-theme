@@ -1425,23 +1425,9 @@
 	    </entry>
 	  </row>
 	  <row>
-	    <entry>x-directory-normal-hidden</entry>
-	    <entry>
-	      The icon used for normal directories on the filesystem, which
-	      are hidden.
-	    </entry>
-	  </row>
-	  <row>
 	    <entry>x-directory-remote</entry>
 	    <entry>
 	      The icon used for normal directories on a remote filesystem.
-	    </entry>
-	  </row>
-	  <row>
-	    <entry>x-directory-remote-hidden</entry>
-	    <entry>
-	      The icon used for normal directories on a remote filesystem,
-	      which are hidden.
 	    </entry>
 	  </row>
 	  <row>
@@ -1522,6 +1508,30 @@
 	    <entry>appointment-soon</entry>
 	    <entry>
 	      The icon used when an appointment will occur soon.
+	    </entry>
+	  </row>
+	  <row>
+	    <entry>audio-volume-high</entry>
+	    <entry>
+	      The icon used to indicate high audio volume.
+	    </entry>
+	  </row>
+	  <row>
+	    <entry>audio-volume-low</entry>
+	    <entry>
+	      The icon used to indicate low audio volume.
+	    </entry>
+	  </row>
+	  <row>
+	    <entry>audio-volume-medium</entry>
+	    <entry>
+	      The icon used to indicate medium audio volume.
+	    </entry>
+	  </row>
+	  <row>
+	    <entry>audio-volume-muted</entry>
+	    <entry>
+	      The icon used to indicate the muted state for audio playback.
 	    </entry>
 	  </row>
 	  <row>
