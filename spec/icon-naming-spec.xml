@@ -5,8 +5,8 @@
 <article id="index">
   <articleinfo>
     <title>Icon Naming Specification</title>
-    <releaseinfo>Version 0.4</releaseinfo>
-    <date>October 10 2005</date>
+    <releaseinfo>Version 0.6</releaseinfo>
+    <date>December 07 2005</date>
     <authorgroup>
       <author>
 	<firstname>Rodney</firstname>
@@ -67,6 +67,15 @@
 	    <entry>actions</entry>
 	  </row>
 	  <row>
+	    <entry>Animations</entry>
+	    <entry>
+              Animated images used to represent loading web sites, or other
+              background processing which may be less suited to more verbose
+              progress reporting in the user itnerface.
+	    </entry>
+	    <entry>animations</entry>
+	  </row>
+	  <row>
 	    <entry>Apps</entry>
 	    <entry>
 	      Icons that describe what an application is, for use in the
@@ -124,6 +133,15 @@
 	      Icons for different types of data, such as audio or image files.
 	    </entry>
 	    <entry>mimetypes</entry>
+	  </row>
+	  <row>
+	    <entry>Places</entry>
+	    <entry>
+	      Icons used to represent locations, either on the local
+              filesystem, or through remote connections. Folders, trash, and
+              workgroups are some examples.
+	    </entry>
+	    <entry>places</entry>
 	  </row>
 	  <row>
 	    <entry>Status</entry>
@@ -615,6 +633,12 @@
 	    </entry>
 	  </row>
 	  <row>
+	    <entry>media-eject</entry>
+	    <entry>
+              The icon for the eject action of a media player or file manager.
+	    </entry>
+	  </row>
+	  <row>
 	    <entry>media-playback-pause</entry>
 	    <entry>
               The icon for the pause action of a media player.
@@ -630,12 +654,6 @@
 	    <entry>media-playback-stop</entry>
 	    <entry>
               The icon for the stop action of a media player.
-	    </entry>
-	  </row>
-	  <row>
-	    <entry>media-playlist-shuffle</entry>
-	    <entry>
-              The icon for the shuffle action of a media player.
 	    </entry>
 	  </row>
 	  <row>
@@ -804,6 +822,31 @@
 	    </entry>
 	  </row>
 	</tbody>
+      </tgroup>
+    </table>
+
+    <table id="animations">
+      <title>Standard Animation Icons</title>
+      <tgroup cols="2">
+	<thead>
+	  <row>
+	    <entry>Name</entry>
+	    <entry>Description</entry>
+	  </row>
+	</thead>
+	<tbody>
+	  <row>
+	    <entry>process-working</entry>
+	    <entry>
+              This is the standard spinner animation for web browsers and
+              file managers to show that the location is loading. This image
+              should be a multi-frame PNG with the frames as the size that
+              the directory containing the image, is specified to be in. The
+              first frame of the animation should be used for the resting
+              state of the animation.
+	    </entry>
+	  </row>
+        </tbody>
       </tgroup>
     </table>
 
@@ -1084,6 +1127,18 @@
 	    </entry>
 	  </row>
 	  <row>
+	    <entry>battery</entry>
+	    <entry>
+	      The icon used for the system battery device.
+	    </entry>
+	  </row>
+	  <row>
+	    <entry>camera-photo</entry>
+	    <entry>
+	      The icon used for a digital still camera devices.
+	    </entry>
+	  </row>
+	  <row>
 	    <entry>camera-video</entry>
 	    <entry>
 	      The icon used for a video or web camera.
@@ -1132,21 +1187,39 @@
 	    </entry>
 	  </row>
 	  <row>
+	    <entry>media-cdrom</entry>
+	    <entry>
+	      The icon used for physical CD and DVD media.
+	    </entry>
+	  </row>
+	  <row>
+	    <entry>media-floppy</entry>
+	    <entry>
+	      The icon used for physical floppy disk media.
+	    </entry>
+	  </row>
+	  <row>
+	    <entry>multimedia-player</entry>
+	    <entry>
+	      The icon used for generic multimedia playing devices.
+	    </entry>
+	  </row>
+	  <row>
+	    <entry>network-wired</entry>
+	    <entry>
+	      The icon used for wired network connections.
+	    </entry>
+	  </row>
+	  <row>
+	    <entry>network-wireless</entry>
+	    <entry>
+	      The icon used for wireless network connections.
+	    </entry>
+	  </row>
+	  <row>
 	    <entry>printer</entry>
 	    <entry>
 	      The icon used for a printer which is connected locally.
-	    </entry>
-	  </row>
-	  <row>
-	    <entry>printer-remote</entry>
-	    <entry>
-	      The icon used for a printer which is connected over the network.
-	    </entry>
-	  </row>
-	  <row>
-	    <entry>video-card</entry>
-	    <entry>
-	      The icon used for the internal video rendering device.
 	    </entry>
 	  </row>
 	  <row>
@@ -1191,7 +1264,7 @@
 	    </entry>
 	  </row>
 	  <row>
-	    <entry>emblem-favorites</entry>
+	    <entry>emblem-favorite</entry>
 	    <entry>
 	      The icon used as an emblem for files and directories that the
 	      user marks as favorites.
@@ -1395,6 +1468,12 @@
 	</thead>
 	<tbody>
 	  <row>
+	    <entry>application-x-executable</entry>
+	    <entry>
+	      The icon used for executable file types.
+	    </entry>
+	  </row>
+	  <row>
 	    <entry>audio-x-generic</entry>
 	    <entry>
 	      The icon used for generic audio file types.
@@ -1413,51 +1492,39 @@
 	    </entry>
 	  </row>
 	  <row>
+	    <entry>package-x-generic</entry>
+	    <entry>
+	      The icon used for generic package file types.
+	    </entry>
+	  </row>
+	  <row>
+	    <entry>text-html</entry>
+	    <entry>
+	      The icon used for HTML text file types.
+	    </entry>
+	  </row>
+	  <row>
 	    <entry>text-x-generic</entry>
 	    <entry>
 	      The icon used for generic text file types.
 	    </entry>
 	  </row>
 	  <row>
+	    <entry>text-x-generic-template</entry>
+	    <entry>
+	      The icon used for generic text templates.
+	    </entry>
+	  </row>
+	  <row>
+	    <entry>text-x-script</entry>
+	    <entry>
+	      The icon used for script file types, such as shell scripts.
+	    </entry>
+	  </row>
+	  <row>
 	    <entry>video-x-generic</entry>
 	    <entry>
 	      The icon used for generic video file types.
-	    </entry>
-	  </row>
-	  <row>
-	    <entry>x-directory-normal</entry>
-	    <entry>
-	      The icon used for normal directories on the filesystem.
-	    </entry>
-	  </row>
-	  <row>
-	    <entry>x-directory-remote</entry>
-	    <entry>
-	      The icon used for normal directories on a remote filesystem.
-	    </entry>
-	  </row>
-	  <row>
-	    <entry>x-directory-remote-server</entry>
-	    <entry>
-	      The icon used for hosts within an SMB workgroup.
-	    </entry>
-	  </row>
-	  <row>
-	    <entry>x-directory-remote-workgroup</entry>
-	    <entry>
-	      The icon used for an SMB workgroup.
-	    </entry>
-	  </row>
-	  <row>
-	    <entry>x-directory-trash</entry>
-	    <entry>
-	      The icon used for the Trash storage on a filesystem.
-	    </entry>
-	  </row>
-	  <row>
-	    <entry>x-directory-trash-full</entry>
-	    <entry>
-	      The icon used for the Trash storage while it contains items.
 	    </entry>
 	  </row>
 	  <row>
@@ -1491,6 +1558,75 @@
 	    </entry>
 	  </row>
 	</tbody>
+      </tgroup>
+    </table>
+
+    <table id="places">
+      <title>Standard Place Icons</title>
+      <tgroup cols="2">
+	<thead>
+	  <row>
+	    <entry>Name</entry>
+	    <entry>Description</entry>
+	  </row>
+	</thead>
+	<tbody>
+	  <row>
+	    <entry>folder</entry>
+	    <entry>
+              The standard folder icon used to represent directories on local
+              filesystems, mail folders, and other hierarchical groups.
+	    </entry>
+	  </row>
+	  <row>
+	    <entry>folder-remote</entry>
+	    <entry>
+	      The icon used for normal directories on a remote filesystem.
+	    </entry>
+	  </row>
+	  <row>
+	    <entry>network-server</entry>
+	    <entry>
+	      The icon used for individual host machines under the
+              <quote>Network Servers</quote> place in the file manager.
+	    </entry>
+	  </row>
+	  <row>
+	    <entry>network-workgroup</entry>
+	    <entry>
+              The icon for the <quote>Network Servers</quote> place in the
+              desktop's file manager, and workgroups within the network.
+	    </entry>
+	  </row>
+	  <row>
+	    <entry>start-here</entry>
+	    <entry>
+              The icon used by the desktop's main menu for accessing places,
+              applications, and other features.
+	    </entry>
+	  </row>
+	  <row>
+	    <entry>user-desktop</entry>
+	    <entry>
+              The icon for the special <quote>Desktop</quote> directory of
+              the user.
+	    </entry>
+	  </row>
+	  <row>
+	    <entry>user-home</entry>
+	    <entry>
+              The icon for the special <quote>Home</quote> directory of
+              the user.
+	    </entry>
+	  </row>
+	  <row>
+	    <entry>user-trash</entry>
+	    <entry>
+              The icon for the user's <quote>Trash</quote> place in the
+              desktop's file manager.
+	    </entry>
+	  </row>
+        </tbody>
       </tgroup>
     </table>
 
@@ -1588,6 +1724,32 @@
 	    </entry>
 	  </row>
 	  <row>
+	    <entry>folder-drag-accept</entry>
+	    <entry>
+	      The icon used for a folder while an object is being
+              dragged onto it, that is of a type that the directory can
+              contain.
+	    </entry>
+	  </row>
+	  <row>
+	    <entry>folder-open</entry>
+	    <entry>
+	      The icon used for folders, while their contents are being
+              displayed within the same window. This icon would normally be
+              shown in a tree or list view, next to the main view of a
+              folder's contents.
+	    </entry>
+	  </row>
+	  <row>
+	    <entry>folder-visiting</entry>
+	    <entry>
+	      The icon used for folders, while their contents are being
+              displayed in another window. This icon would typically be used
+              when using multiple windows to navigate the hierarchy, such as
+              in Nautilus's spatial mode.
+	    </entry>
+	  </row>
+	  <row>
 	    <entry>image-loading</entry>
 	    <entry>
 	      The icon used when another image is being loaded, such as
@@ -1635,6 +1797,18 @@
 	    <entry>
 	      The icon used for an electronic mail that contains a signature
 	      which has also been verified by the security system.
+	    </entry>
+	  </row>
+	  <row>
+	    <entry>media-playlist-repeat</entry>
+	    <entry>
+              The icon for the repeat action of a media player.
+	    </entry>
+	  </row>
+	  <row>
+	    <entry>media-playlist-shuffle</entry>
+	    <entry>
+              The icon for the shuffle action of a media player.
 	    </entry>
 	  </row>
 	  <row>
@@ -1741,6 +1915,14 @@
 	    </entry>
 	  </row>
 	  <row>
+	    <entry>user-trash-full</entry>
+	    <entry>
+              The icon for the user's <quote>Trash</quote> in the desktop's
+              file manager, when there are items in the <quote>Trash</quote>
+              waiting for disposal or recovery.
+	    </entry>
+	  </row>
+	  <row>
 	    <entry>weather-clear</entry>
 	    <entry>
 	      The icon used while the weather for a region is
@@ -1808,6 +1990,104 @@
 
   <appendix id="changelog">
     <title>Change History</title>
+    <formalpara>
+      <title>Version 0.6, 07 December 2005, Rodney Dawes</title>    
+      <para>
+	<itemizedlist>
+	  <listitem>
+	    <para>
+              Add the "Animations" and "Places" contexts
+	    </para>
+          </listitem>
+          <listitem>
+            <para>
+              Add "media-eject" to the actions context
+            </para>
+          </listitem>
+          <listitem>
+            <para>
+              Move "media-playlist-shuffle" to the status context
+            </para>
+          </listitem>
+	  <listitem>
+	    <para>
+              Add the "process-working" animation to the animations context
+	    </para>
+          </listitem>
+	  <listitem>
+	    <para>
+              Add "battery", "camera-photo", "media-floppy", "multimedia-player",
+              "network-wired", and "network-wireless" to the devices context
+	    </para>
+          </listitem>
+	  <listitem>
+	    <para>
+              Remove the printer-remote and video-card icons from devices
+	    </para>
+          </listitem>
+	  <listitem>
+	    <para>
+              Rename "emblem-favorites" to "emblem-favorite"
+	    </para>
+          </listitem>
+	  <listitem>
+	    <para>
+              Add "application-x-executable", "package-x-generic",
+              "text-x-generic-template", and "text-x-script" to the
+              mimetypes context
+	    </para>
+          </listitem>
+	  <listitem>
+	    <para>
+              Rename "x-directory-normal" to "folder" and move it to the
+              places context
+	    </para>
+          </listitem>
+	  <listitem>
+	    <para>
+              Rename "x-directory-remote" to "folder-remote" and move it to the
+              places context
+	    </para>
+          </listitem>
+	  <listitem>
+	    <para>
+              Rename "x-directory-normal-remote-server" to "network-server"
+              and move it to the places context
+	    </para>
+          </listitem>
+	  <listitem>
+	    <para>
+              Rename "x-directory-normal-remote-workgroup" to
+              "network-workgroup" and move it to the places context
+	    </para>
+          </listitem>
+	  <listitem>
+	    <para>
+              Rename "x-directory-trash" to "user-trash"
+              and move it to the places context
+	    </para>
+          </listitem>
+	  <listitem>
+	    <para>
+              Rename "x-directory-trash-full" to "user-trash-full" and move
+              it to the status context
+	    </para>
+          </listitem>
+	  <listitem>
+	    <para>
+              Add "start-here", "user-desktop", and "user-home" to the places
+              context
+	    </para>
+          </listitem>
+	  <listitem>
+	    <para>
+              Add "folder-drag-accept", "folder-open", "folder-visiting", and
+              "media-playlist-repeat" to the status context
+	    </para>
+          </listitem>
+	</itemizedlist>
+      </para>
+    </formalpara>
     <formalpara>
       <title>Version 0.4, 10 October 2005, Rodney Dawes</title>    
       <para>
