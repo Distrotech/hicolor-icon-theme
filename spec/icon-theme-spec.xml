@@ -5,8 +5,8 @@
 <article id="index">
   <articleinfo>
     <title>Icon Theme Specification</title>
-    <releaseinfo>Version 0.7</releaseinfo>
-    <date>September 22 2003</date>
+    <releaseinfo>Version 0.10</releaseinfo>
+    <date>February 7 2006</date>
     <authorgroup>
       <author>
 	<firstname>Alexander</firstname>
@@ -470,71 +470,114 @@
     fallback, as the correct choice depends on the context.
     </para>
     <para>
-    The exact algorithm (in pseudocode) for looking up an icon in an
-    implementation that supports SVG is:
-    <programlisting>LookupIcon (iconname, size):
-for each subdir in $(theme subdir list) {
-    for each directory in $(basename list) {
-        for extension in ("png", "svg", "xpm") {
-            if DirectoryMatchesSize(subdir, size) {
-                filename = directory/$(themename)/subdir/iconname.extension
-                if exist filename
-	            return filename
-            }
-	}
-   }
+    The exact algorithm (in pseudocode) for looking up an icon in a theme
+    (if the implementation supports SVG) is:
+    <programlisting>
+FindIcon(icon, size) {
+  theme = user selected theme
+  do {
+    filename = LookupIcon (icon, size, theme)
+    if filename != none
+      return filename
+    theme = theme.parentTheme()
+  } while (theme)
+  return LookupFallbackIcon (iconname)
 }
-
-minimal_size = MAXINT
-for each subdir in $(theme subdir list) {
-    for each directory in $(basename list) {
-        for extension in ("png", "svg", "xpm") {
-            filename = directory/$(themename)/subdir/iconname.extension
-            if exist filename and DirectorySizeDistance(subdir, size) &lt; minimal_size
-	        closest_filename = filename
-		minimal_size = DirectorySizeDistance(subdir, size)
-	}
-   }
-}
-if closest_filename set
-   return closest_filename
-   
-for each directory in $(basename list) {
-    for extension in ("png", "svg", "xpm") {
-	if exists directory/iconname.extension
-	   return directory/iconname.extension
-    }
-}
-
-return failed icon lookup
      </programlisting>
      With the following helper functions:
-     <programlisting>DirectoryMatchesSize(subdir, iconsize):
-read Type and size data from subdir
-if Type is Fixed
-    return Size == iconsize
-if Type is Scaled
-    return MinSize &lt;= iconsize &lt;= MaxSize
-if Type is Threshold
-    return Size - Threshold &lt;= iconsize &lt;= Size + Threshold
+     <programlisting>
+LookupIcon (iconname, size, theme) {
+  for each subdir in $(theme subdir list) {
+    for each directory in $(basename list) {
+      for extension in ("png", "svg", "xpm") {
+        if DirectoryMatchesSize(subdir, size) {
+          filename = directory/$(themename)/subdir/iconname.extension
+          if exist filename
+	    return filename
+        }
+      }
+    }
+  }
+  minimal_size = MAXINT
+  for each subdir in $(theme subdir list) {
+    for each directory in $(basename list) {
+      for extension in ("png", "svg", "xpm") {
+        filename = directory/$(themename)/subdir/iconname.extension
+        if exist filename and DirectorySizeDistance(subdir, size) &lt; minimal_size {
+	   closest_filename = filename
+	   minimal_size = DirectorySizeDistance(subdir, size)
+        }
+      }
+    }
+  }
+  if closest_filename set
+     return closest_filename
+  return none
+}
 
-DirectorySizeDistance(subdir, size):
-read Type and size data from subdir
-if Type is Fixed
+LookupFallbackIcon (iconname) {
+  for each directory in $(basename list) {
+    for extension in ("png", "svg", "xpm") {
+      if exists directory/iconname.extension
+        return directory/iconname.extension
+    }
+  }
+  return none
+}
+
+DirectoryMatchesSize(subdir, iconsize) {
+  read Type and size data from subdir
+  if Type is Fixed
+    return Size == iconsize
+  if Type is Scaled
+    return MinSize &lt;= iconsize &lt;= MaxSize
+  if Type is Threshold
+    return Size - Threshold &lt;= iconsize &lt;= Size + Threshold
+}
+
+DirectorySizeDistance(subdir, size) {
+  read Type and size data from subdir
+  if Type is Fixed
     return abs(Size - iconsize)
-if Type is Scaled
+  if Type is Scaled
     if iconsize &lt; MinSize
         return MinSize - iconsize
     if iconsize &gt; MaxSize
         return iconsize - MaxSize
     return 0
-if Type is Threshold
+  if Type is Threshold
     if iconsize &lt; Size - Threshold
         return MinSize - iconsize
     if iconsize &gt; Size + Threshold
         return iconsize - MaxSize
     return 0
+}
 </programlisting>
+    </para>
+    <para>
+    In some cases you don't always want to fall back to an icon in an
+    inherited theme. For instance, sometimes you look for a set of
+    icons, prefering any of them before using an icon from an inherited
+    theme. To support such operations implementations can contain a
+    function that finds the first of a list of icon names in the inheritance
+    hierarchy. I.E. It would look something like this:
+<programlisting>FindBestIcon(iconList, size) {
+  theme = user selected theme
+  do {
+    for icon in iconList {
+      filename = LookupIcon (icon, size, theme)
+      if filename != none
+        return filename
+    }
+
+    theme = theme.parentTheme()
+  } while (theme)
+
+  return LookupFallbackIcon (iconname)
+}
+</programlisting>
+    This can be very useful for example when handling mimetype icons, where there
+    are more and less "specific" versions of icons.
     </para>
   </sect1>
 
@@ -661,6 +704,24 @@ AttachPoints=20,20|40,40|50,10|10,50</programlisting>
   
   <appendix id="changes">
     <title>Change history</title>
+    <formalpara>
+      <title>Version 0.10, 7 February 2006, Alexander Larsson</title>    
+      <para>
+	<itemizedlist>
+	  <listitem>
+	    <para>
+            Clarify that icon lookup looks in all parent themes before
+            falling back to nonthemed icons.
+	    </para>
+	  </listitem>
+	  <listitem>
+	    <para>
+            Added lookup function that takes a list of icon names (FindBestIcon)
+	    </para>
+	  </listitem>
+	</itemizedlist>
+      </para>
+    </formalpara>
     <formalpara>
       <title>Version 0.9, 4 April 2005, Alexander Larsson</title>    
       <para>
