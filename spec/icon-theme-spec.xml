@@ -5,7 +5,7 @@
 <article id="index">
   <articleinfo>
     <title>Icon Theme Specification</title>
-    <releaseinfo>Version 0.10</releaseinfo>
+    <releaseinfo>Version 0.11</releaseinfo>
     <date>February 7 2006</date>
     <authorgroup>
       <author>
@@ -474,14 +474,27 @@
     (if the implementation supports SVG) is:
     <programlisting>
 FindIcon(icon, size) {
-  theme = user selected theme
-  do {
-    filename = LookupIcon (icon, size, theme)
+  filename = FindIconHelper(icon, size, user selected theme);
+  if filename != none
+    return filename
+  return LookupFallbackIcon (icon)
+}
+FindIconHelper(icon, size, theme) {
+  filename = LookupIcon (icon, size, theme)
+  if filename != none
+    return filename
+
+  if theme has parents
+    parents = theme.parents
+  else if theme != hicolor
+    parents = [hicolor]
+
+  for parent in parents {
+    filename = FindIconHelper (icon, size, parent)
     if filename != none
       return filename
-    theme = theme.parentTheme()
-  } while (theme)
-  return LookupFallbackIcon (iconname)
+  }
+  return none
 }
      </programlisting>
      With the following helper functions:
@@ -561,19 +574,36 @@ DirectorySizeDistance(subdir, size) {
     theme. To support such operations implementations can contain a
     function that finds the first of a list of icon names in the inheritance
     hierarchy. I.E. It would look something like this:
-<programlisting>FindBestIcon(iconList, size) {
-  theme = user selected theme
-  do {
-    for icon in iconList {
-      filename = LookupIcon (icon, size, theme)
-      if filename != none
-        return filename
-    }
+<programlisting>
+FindBestIcon(iconList, size) {
+  filename = FindBestIconHelper(iconList, size, user selected theme);
+  if filename != none
+    return filename
+  for icon in iconList {
+    filename = LookupFallbackIcon (icon)
+    if filename != none
+      return filename
+  }
+  return none;
+}
+FindBestIconHelper(iconList, size, theme) {
+  for icon in iconList {
+    filename = LookupIcon (icon, size, theme)
+    if filename != none
+      return filename
+  }
 
-    theme = theme.parentTheme()
-  } while (theme)
+  if theme has parents
+    parents = theme.parents
+  else if theme != hicolor
+    parents = [hicolor]
 
-  return LookupFallbackIcon (iconname)
+  for parent in parents {
+    filename = FindBestIconHelper (iconList, size, parent)
+    if filename != none
+      return filename
+  }
+  return none
 }
 </programlisting>
     This can be very useful for example when handling mimetype icons, where there
@@ -657,9 +687,10 @@ AttachPoints=20,20|40,40|50,10|10,50</programlisting>
     so that they work in the KDE and Gnome menus. Minimally you should install
     a 48x48 icon in the hicolor theme. This means installing a PNG file in
     $prefix/share/icons/hicolor/48x48/apps. Optionally you can install icons in different
-    sizes. You might even want to install icons with a look that matches other
-    well known themes so your application will fit in with some specific desktop
-    environment. 
+    sizes. For example, installing a svg icon in $prefix/share/icons/hicolor/scalable/apps
+    means most desktops will have one icon that works for all sizes. You might even want to
+    install icons with a look that matches other well known themes so your application
+    will fit in with some specific desktop environment. 
     </para>
     <para>
     It is recommended that the icons installed in the hicolor theme look neutral,
@@ -704,6 +735,18 @@ AttachPoints=20,20|40,40|50,10|10,50</programlisting>
   
   <appendix id="changes">
     <title>Change history</title>
+    <formalpara>
+      <title>Version 0.11, 7 February 2006, Alexander Larsson</title>    
+      <para>
+	<itemizedlist>
+	  <listitem>
+	    <para>
+            Fixed icon lookup clarification to work with multiple inheritance.
+	    </para>
+	  </listitem>
+	</itemizedlist>
+      </para>
+    </formalpara>
     <formalpara>
       <title>Version 0.10, 7 February 2006, Alexander Larsson</title>    
       <para>
