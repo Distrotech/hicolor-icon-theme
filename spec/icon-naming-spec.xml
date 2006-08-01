@@ -5,8 +5,8 @@
 <article id="index">
   <articleinfo>
     <title>Icon Naming Specification</title>
-    <releaseinfo>Version 0.7</releaseinfo>
-    <date>February 15 2006</date>
+    <releaseinfo>Version 0.8</releaseinfo>
+    <date>August 1 2006</date>
     <authorgroup>
       <author>
 	<firstname>Rodney</firstname>
@@ -385,6 +385,12 @@ The icon for the undo action.
 	    </entry>
 	  </row>
 	  <row>
+	    <entry>folder-new</entry>
+	    <entry>
+The icon for creating a new folder.
+	    </entry>
+	  </row>
+	  <row>
 	    <entry>format-indent-less</entry>
 	    <entry>
 The icon for the decrease indent formatting action.
@@ -625,6 +631,12 @@ The icon for the reply to sender action of an electronic mail application.
 	    </entry>
 	  </row>
 	  <row>
+	    <entry>mail-send</entry>
+	    <entry>
+The icon for the send action of an electronic mail application.
+	    </entry>
+	  </row>
+	  <row>
 	    <entry>mail-send-receive</entry>
 	    <entry>
 The icon for the send and receive action of an electronic mail application.
@@ -682,6 +694,30 @@ The icon for the skip backward action of a media player.
 	    <entry>media-skip-forward</entry>
 	    <entry>
 The icon for the skip forward action of a media player.
+	    </entry>
+	  </row>
+	  <row>
+	    <entry>object-flip-horizontal</entry>
+	    <entry>
+The icon for the action to flip an object horizontally.
+	    </entry>
+	  </row>
+	  <row>
+	    <entry>object-flip-vertical</entry>
+	    <entry>
+The icon for the action to flip an object vertically.
+	    </entry>
+	  </row>
+	  <row>
+	    <entry>object-rotate-left</entry>
+	    <entry>
+The icon for the rotate left action performed on an object.
+	    </entry>
+	  </row>
+	  <row>
+	    <entry>object-rotate-right</entry>
+	    <entry>
+The icon for the rotate rigt action performed on an object.
 	    </entry>
 	  </row>
 	  <row>
@@ -960,6 +996,12 @@ The icon for the <quote>Programming</quote> sub-menu of the Programs menu.
 	    </entry>
 	  </row>
 	  <row>
+	    <entry>applications-engineering</entry>
+	    <entry>
+The icon for the <quote>Engineering</quote> sub-menu of the Programs menu.
+	    </entry>
+	  </row>
+	  <row>
 	    <entry>applications-games</entry>
 	    <entry>
 The icon for the <quote>Games</quote> sub-menu of the Programs menu.
@@ -996,6 +1038,12 @@ The icon for the <quote>Other</quote> sub-menu of the Programs menu.
 	    </entry>
 	  </row>
 	  <row>
+	    <entry>applications-science</entry>
+	    <entry>
+The icon for the <quote>Science</quote> sub-menu of the Programs menu.
+	    </entry>
+	  </row>
+	  <row>
 	    <entry>applications-system</entry>
 	    <entry>
 The icon for the <quote>System Tools</quote> sub-menu of the Programs menu.
@@ -1011,13 +1059,6 @@ The icon for the <quote>Utilities</quote> sub-menu of the Programs menu.
 	    <entry>preferences-desktop</entry>
 	    <entry>
 The icon for the <quote>Desktop Preferences</quote> category.
-	    </entry>
-	  </row>
-	  <row>
-	    <entry>preferences-desktop-accessibility</entry>
-	    <entry>
-The icon for the <quote>Accessibility</quote> sub-category of
-the <quote>Desktop Preferences</quote> category.
 	    </entry>
 	  </row>
 	  <row>
@@ -1110,15 +1151,15 @@ The icon used for the computing device as a whole.
 	    </entry>
 	  </row>
 	  <row>
-	    <entry>drive-cdrom</entry>
-	    <entry>
-The icon used for CD and DVD drives.
-	    </entry>
-	  </row>
-	  <row>
 	    <entry>drive-harddisk</entry>
 	    <entry>
 The icon used for hard disk drives.
+	    </entry>
+	  </row>
+	  <row>
+	    <entry>drive-optical</entry>
+	    <entry>
+The icon used for optical media drives such as CD and DVD.
 	    </entry>
 	  </row>
 	  <row>
@@ -1146,15 +1187,33 @@ The icon used for the mousing input device.
 	    </entry>
 	  </row>
 	  <row>
-	    <entry>media-cdrom</entry>
+	    <entry>media-flash</entry>
 	    <entry>
-The icon used for physical CD and DVD media.
+The icon used for generic physical CD and DVD media.
 	    </entry>
 	  </row>
 	  <row>
 	    <entry>media-floppy</entry>
 	    <entry>
 The icon used for physical floppy disk media.
+	    </entry>
+	  </row>
+	  <row>
+	    <entry>media-optical</entry>
+	    <entry>
+The icon used for physical optical media such as CD and DVD.
+	    </entry>
+	  </row>
+	  <row>
+	    <entry>media-tape</entry>
+	    <entry>
+The icon used for generic physical tape media.
+	    </entry>
+	  </row>
+	  <row>
+	    <entry>modem</entry>
+	    <entry>
+The icon used for modem devices.
 	    </entry>
 	  </row>
 	  <row>
@@ -1755,13 +1814,13 @@ which has also been verified by the security system.
 	  <row>
 	    <entry>media-playlist-repeat</entry>
 	    <entry>
-The icon for the repeat action of a media player.
+The icon for the repeat mode of a media player.
 	    </entry>
 	  </row>
 	  <row>
 	    <entry>media-playlist-shuffle</entry>
 	    <entry>
-The icon for the shuffle action of a media player.
+The icon for the shuffle mode of a media player.
 	    </entry>
 	  </row>
 	  <row>
@@ -1832,6 +1891,30 @@ overlayed on top of the icon.
 The icon used while a print job is successfully being spooled to a printing
 device. This icon should be the theme's printer device icon, with a document
 emerging from the printing device.
+	    </entry>
+	  </row>
+	  <row>
+	    <entry>security-high</entry>
+	    <entry>
+The icon used to indicate that the security level of a connection is known
+to be secure, using strong encryption and a valid certificate.
+	    </entry>
+	  </row>
+	  <row>
+	    <entry>security-medium</entry>
+	    <entry>
+The icon used to indicate that the security level of a connection is presumed
+to be secure, using strong encryption, and a certificate that could not be
+automatically verified, but which the user has chosen to trust.
+	    </entry>
+	  </row>
+	  <row>
+	    <entry>security-low</entry>
+	    <entry>
+The icon used to indicate that the security level of a connection is presumed
+to be insecure, either by using weak encryption, or by using a certificate that
+the could not be automatically verified, and which the user has not chosent to
+trust.
 	    </entry>
 	  </row>
 	  <row>
@@ -1984,6 +2067,40 @@ The icon used while storms are occurring in a region.
 
   <appendix id="changelog">
     <title>Change History</title>
+    <formalpara>
+      <title>Version 0.8, 1 August 2006, Rodney Dawes</title>
+      <para>
+        <itemizedlist>
+          <listitem>
+            <para>Add "folder-new" and "mail-send"</para>
+          </listitem>
+          <listitem>
+            <para>Add "object-flip-horizontal" and "object-flip-vertical"</para>
+          </listitem>
+          <listitem>
+            <para>Add "object-rotate-left" and "object-rotate-right"</para>
+          </listitem>
+          <listitem>
+            <para>Add "applications-engineering" and "applications-science"</para>
+          </listitem>
+          <listitem>
+            <para>Remove duplicate "preferences-desktop-accessibility"</para>
+          </listitem>
+          <listitem>
+            <para>Rename "drive-cdrom" to "drive-optical"</para>
+          </listitem>
+          <listitem>
+            <para>Rename "media-cdrom" to "media-optical"</para>
+          </listitem>
+          <listitem>
+            <para>Add "media-flash", "media-tape", and "modem"</para>
+          </listitem>
+          <listitem>
+            <para>Add "security-high", "security-medium", and "security-low"</para>
+          </listitem>
+        </itemizedlist>
+      </para>
+    </formalpara>
     <formalpara>
       <title>Version 0.7, 15 February 2006, Rodney Dawes</title>
       <para>
