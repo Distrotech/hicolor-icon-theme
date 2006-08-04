@@ -770,6 +770,13 @@ application's <quote>View</quote> menu.
 	    </entry>
 	  </row>
 	  <row>
+	    <entry>view-restore</entry>
+	    <entry>
+The icon used by an application for leaving the fullscreen view, and returning
+to a normal windowed view.
+	    </entry>
+	  </row>
+	  <row>
 	    <entry>view-sort-ascending</entry>
 	    <entry>
 The icon used for the <quote>Sort Ascending</quote> item in the
@@ -961,6 +968,12 @@ The icon used for the desktop's file management application.
 	    <entry>system-software-update</entry>
 	    <entry>
 The icon used for the desktop's software updating application.
+	    </entry>
+	  </row>
+	  <row>
+	    <entry>utilities-system-monitor</entry>
+	    <entry>
+The icon used for the desktop's system resource monitor application.
 	    </entry>
 	  </row>
 	  <row>
@@ -2071,6 +2084,9 @@ The icon used while storms are occurring in a region.
       <title>Version 0.8, 1 August 2006, Rodney Dawes</title>
       <para>
         <itemizedlist>
+          <listitem>
+            <para>Add "view-restore" and "utilities-system-monitor"</para>
+          </listitem>
           <listitem>
             <para>Add "folder-new" and "mail-send"</para>
           </listitem>
