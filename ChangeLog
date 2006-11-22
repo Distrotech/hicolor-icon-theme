@@ -1,5 +1,10 @@
 2006-11-22  Alexander Larsson  <alexl@redhat.com>
 
+	* configure.ac: 
+	Bump version to 0.10
+
+2006-11-22  Alexander Larsson  <alexl@redhat.com>
+
 	* Makefile.in:
 	* index.theme:
 	Add new contexts from icon naming spec:
