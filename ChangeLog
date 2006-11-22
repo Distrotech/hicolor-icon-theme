@@ -1,3 +1,12 @@
+2006-11-22  Alexander Larsson  <alexl@redhat.com>
+
+	* Makefile.in:
+	* index.theme:
+	Add new contexts from icon naming spec:
+	animations, categories, emotes, places,
+        status
+	Patch from Luca Ferretti <elle.uca@libero.it>
+
 2006-01-12  Alexander Larsson  <alexl@redhat.com>
 
 	* Makefile (VERSION):
