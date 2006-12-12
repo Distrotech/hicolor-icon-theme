@@ -331,6 +331,12 @@ The icon for the save as action.
 	    </entry>
 	  </row>
 	  <row>
+	    <entry>edit-clear</entry>
+	    <entry>
+The icon for the clear action.
+	    </entry>
+	  </row>
+	  <row>
 	    <entry>edit-copy</entry>
 	    <entry>
 The icon for the copy action.
