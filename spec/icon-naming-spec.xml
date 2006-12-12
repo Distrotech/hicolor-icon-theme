@@ -720,6 +720,13 @@ The icon for the rotate left action performed on an object.
 The icon for the rotate rigt action performed on an object.
 	    </entry>
 	  </row>
+          <row>
+            <entry>process-stop</entry>
+            <entry>
+The icon used for the <quote>Stop</quote> action in applications with actions
+that may take a while to process, such as web page loading in a browser.
+            </entry>
+          </row>
 	  <row>
 	    <entry>system-lock-screen</entry>
 	    <entry>
