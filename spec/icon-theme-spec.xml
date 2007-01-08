@@ -477,6 +477,11 @@ FindIcon(icon, size) {
   filename = FindIconHelper(icon, size, user selected theme);
   if filename != none
     return filename
+
+  filename = FindIconHelper(icon, size, "hicolor");
+  if filename != none
+    return filename
+
   return LookupFallbackIcon (icon)
 }
 FindIconHelper(icon, size, theme) {
@@ -486,8 +491,6 @@ FindIconHelper(icon, size, theme) {
 
   if theme has parents
     parents = theme.parents
-  else if theme != hicolor
-    parents = [hicolor]
 
   for parent in parents {
     filename = FindIconHelper (icon, size, parent)
@@ -579,6 +582,11 @@ FindBestIcon(iconList, size) {
   filename = FindBestIconHelper(iconList, size, user selected theme);
   if filename != none
     return filename
+
+  filename = FindBestIconHelper(iconList, size, "hicolor");
+  if filename != none
+    return filename
+
   for icon in iconList {
     filename = LookupFallbackIcon (icon)
     if filename != none
@@ -595,8 +603,6 @@ FindBestIconHelper(iconList, size, theme) {
 
   if theme has parents
     parents = theme.parents
-  else if theme != hicolor
-    parents = [hicolor]
 
   for parent in parents {
     filename = FindBestIconHelper (iconList, size, parent)
@@ -735,6 +741,19 @@ AttachPoints=20,20|40,40|50,10|10,50</programlisting>
   
   <appendix id="changes">
     <title>Change history</title>
+    <formalpara>
+      <title>Version 0.12, 24 December 2006, Octavio Alvarez</title>    
+      <para>
+	<itemizedlist>
+	  <listitem>
+	    <para>
+            Fixed "hicolor" lookup in the pseudocode, so it works with multiple
+            parents.
+	    </para>
+	  </listitem>
+	</itemizedlist>
+      </para>
+    </formalpara>
     <formalpara>
       <title>Version 0.11, 7 February 2006, Alexander Larsson</title>    
       <para>
