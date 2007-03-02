@@ -102,7 +102,23 @@ settings for display to the user.
 	    <entry>Devices</entry>
 	    <entry>
 Icons for hardware that is contained within or connected to the
-computing device.
+computing device. Naming for extended devices in this group, is of the form
+&lt;primary function&gt;-&lt;manufacturer&gt;-&lt;model&gt;. This allows ease
+of fallback to the primary function device name, or ones more targetted for
+a specific series of models from a manufacturer. For example, a theme author
+may want to provide icons for different phones. The specific model icons could
+be named <quote>phone-samsung-t809</quote>, <quote>phone-motorola-rokr</quote>,
+and <quote>phone-motorola-pebl</quote>. However, the theme must provide a phone
+icon in the theme's style, so that devices not matching these models, will
+still have an appropriate icon. An exception to this rule is that the
+<quote>media</quote> icons do not need to include manufacturer names, as they
+are generic items, and may be available from many manufacturers. As a result,
+for media, the specific icons are to differentiate between different specific
+types of media. For exmaple, an artist may wish to provide icons for BluRay,
+DVD, HD-DVD, CD-ROM, and variations thereof. The specific media type icons
+should be named in the form, &lt;primary function&gt;-&lt;specific format&gt;.
+Some examples are <auote>media-optical</auote>, <quote>media-optical-bd</quote>
+and <quote>media-optical-dvd</quote>.
 	    </entry>
 	    <entry>devices</entry>
 	  </row>
@@ -111,7 +127,7 @@ computing device.
 	    <entry>
 Icons for tags and properties of files, that are displayed in the
 file manager. This context contains emblems for such things as
-	      <quote>read-only</quote> or <quote>photos</quote>.
+<quote>read-only</quote> or <quote>photos</quote>.
 	    </entry>
 	    <entry>emblems</entry>
 	  </row>
@@ -244,27 +260,6 @@ in a calendaring application.
 	    <entry>
 The icon used for the action to create a new contact
 in an address book application.
-	    </entry>
-	  </row>
-	  <row>
-	    <entry>dialog-cancel</entry>
-	    <entry>
-The icon used for the <quote>Cancel</quote> button that
-might appear in dialog windows.
-	    </entry>
-	  </row>
-	  <row>
-	    <entry>dialog-close</entry>
-	    <entry>
-The icon used for the <quote>Close</quote> button that
-might appear in dialog windows.
-	    </entry>
-	  </row>
-	  <row>
-	    <entry>dialog-ok</entry>
-	    <entry>
-The icon used for the <quote>OK</quote> button that
-might appear in dialog windows.
 	    </entry>
 	  </row>
 	  <row>
@@ -1167,7 +1162,13 @@ The icon used for a digital still camera devices.
 	  <row>
 	    <entry>camera-video</entry>
 	    <entry>
-The icon used for a video or web camera.
+The fallback icon for video cameras.
+	    </entry>
+	  </row>
+	  <row>
+	    <entry>camera-web</entry>
+	    <entry>
+The fallback icon for web cameras.
 	    </entry>
 	  </row>
 	  <row>
@@ -1213,9 +1214,15 @@ The icon used for the mousing input device.
 	    </entry>
 	  </row>
 	  <row>
+	    <entry>input-tablet</entry>
+	    <entry>
+The icon used for graphics tablet input devices.
+	    </entry>
+	  </row>
+	  <row>
 	    <entry>media-flash</entry>
 	    <entry>
-The icon used for generic physical CD and DVD media.
+The fallback icon used for flash media, such as memory stick and SD.
 	    </entry>
 	  </row>
 	  <row>
@@ -1261,9 +1268,33 @@ The icon used for wireless network connections.
 	    </entry>
 	  </row>
 	  <row>
+	    <entry>pda</entry>
+	    <entry>
+This is the fallback icon for Personal Digial Assistant devices. Primary use
+of this icon is for PDA devices connected to the PC. Connection medium is not
+an important aspect of the icon. The metaphor for this fallback icon should be
+a generic PDA device icon.
+	    </entry>
+	  </row>
+	  <row>
+	    <entry>phone</entry>
+	    <entry>
+This is the default fallback for phone devices. Primary use of this icon group
+is for phone devices which support connectivity to the PC. These may be VoIP,
+cellular, or possibly landline phones. The metaphor for this fallback should be
+a generic mobile phone device.
+	    </entry>
+	  </row>
+	  <row>
 	    <entry>printer</entry>
 	    <entry>
-The icon used for a printer which is connected locally.
+The icon used for a printer device.
+	    </entry>
+	  </row>
+	  <row>
+	    <entry>scanner</entry>
+	    <entry>
+The icon used for a scanner device.
 	    </entry>
 	  </row>
 	  <row>
@@ -1396,27 +1427,27 @@ The icon used for the 0:-) emote.
 	    </entry>
 	  </row>
 	  <row>
+	    <entry>face-cool</entry>
+	    <entry>
+The icon used for the B-) emote.
+	    </entry>
+	  </row>
+	  <row>
 	    <entry>face-crying</entry>
 	    <entry>
 The icon used for the :'( emote.
 	    </entry>
 	  </row>
 	  <row>
-	    <entry>face-devil-grin</entry>
+	    <entry>face-devilish</entry>
 	    <entry>
 The icon used for the >:-) emote.
 	    </entry>
 	  </row>
 	  <row>
-	    <entry>face-devil-sad</entry>
+	    <entry>face-embarrassed</entry>
 	    <entry>
-The icon used for the >:-( emote.
-	    </entry>
-	  </row>
-	  <row>
-	    <entry>face-glasses</entry>
-	    <entry>
-The icon used for the B-) emote.
+The icon used for the :-[ emote.
 	    </entry>
 	  </row>
 	  <row>
@@ -1435,6 +1466,12 @@ The icon used for the :-(|) emote.
 	    <entry>face-plain</entry>
 	    <entry>
 The icon used for the :-| emote.
+	    </entry>
+	  </row>
+	  <row>
+	    <entry>face-raspberry</entry>
+	    <entry>
+The icon used for the :-P emote.
 	    </entry>
 	  </row>
 	  <row>
