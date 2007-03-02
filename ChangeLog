@@ -1,3 +1,9 @@
+2007-03-02  Alexander Larsson  <alexl@redhat.com>
+
+	* Makefile.in:
+	Update configure.ac for autoconf 2.60
+	Patch from andreas.hanke@gmx-topmail.de
+
 2006-11-22  Alexander Larsson  <alexl@redhat.com>
 
 	* configure.ac: 

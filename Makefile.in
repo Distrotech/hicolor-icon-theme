@@ -1,6 +1,7 @@
 PACKAGE = @PACKAGE_TARNAME@
 VERSION = @PACKAGE_VERSION@
 prefix = @prefix@
+datarootdir = @datarootdir@
 datadir = @datadir@
 INSTALL = @INSTALL@
 INSTALL_DATA = @INSTALL_DATA@
