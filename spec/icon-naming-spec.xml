@@ -117,7 +117,7 @@ for media, the specific icons are to differentiate between different specific
 types of media. For exmaple, an artist may wish to provide icons for BluRay,
 DVD, HD-DVD, CD-ROM, and variations thereof. The specific media type icons
 should be named in the form, &lt;primary function&gt;-&lt;specific format&gt;.
-Some examples are <auote>media-optical</auote>, <quote>media-optical-bd</quote>
+Some examples are <quote>media-optical</quote>, <quote>media-optical-bd</quote>
 and <quote>media-optical-dvd</quote>.
 	    </entry>
 	    <entry>devices</entry>
@@ -1441,7 +1441,7 @@ The icon used for the :'( emote.
 	  <row>
 	    <entry>face-devilish</entry>
 	    <entry>
-The icon used for the >:-) emote.
+The icon used for the &gt;:-) emote.
 	    </entry>
 	  </row>
 	  <row>
