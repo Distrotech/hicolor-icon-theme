@@ -104,7 +104,7 @@ settings for display to the user.
 Icons for hardware that is contained within or connected to the
 computing device. Naming for extended devices in this group, is of the form
 &lt;primary function&gt;-&lt;manufacturer&gt;-&lt;model&gt;. This allows ease
-of fallback to the primary function device name, or ones more targetted for
+of fallback to the primary function device name, or ones more targeted for
 a specific series of models from a manufacturer. For example, a theme author
 may want to provide icons for different phones. The specific model icons could
 be named <quote>phone-samsung-t809</quote>, <quote>phone-motorola-rokr</quote>,
