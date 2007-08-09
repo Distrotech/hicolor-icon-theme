@@ -5,15 +5,15 @@
 <article id="index">
   <articleinfo>
     <title>Icon Naming Specification</title>
-    <releaseinfo>Version 0.8</releaseinfo>
-    <date>August 1 2006</date>
+    <releaseinfo>Version 0.8.90</releaseinfo>
+    <date>August 9 2007</date>
     <authorgroup>
       <author>
 	<firstname>Rodney</firstname>
 	<surname>Dawes</surname>
 	<affiliation>
 	  <address>
-	    <email>dobey@novell.com</email>
+	    <email>dobey.pwns@gmail.com</email>
 	  </address>
 	</affiliation>
       </author>
@@ -2014,7 +2014,7 @@ The icon used when a task is due soon.
 	    </entry>
 	  </row>
 	  <row>
-	    <entry>task-passed-due</entry>
+	    <entry>task-past-due</entry>
 	    <entry>
 The icon used when a task that was due, has been left incomplete.
 	    </entry>
