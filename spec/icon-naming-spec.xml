@@ -1427,7 +1427,6 @@ The icon used for the 0:-) emote.
 	    </entry>
 	  </row>
 	  <row>
-	  <row>
 	    <entry>face-angry</entry>
 	    <entry>
 The icon used for the X-( emote.
@@ -1496,7 +1495,7 @@ The icon used for the :-( emote.
 	  <row>
 	    <entry>face-sick</entry>
 	    <entry>
-The icon used for the :-& emote.
+The icon used for the :-&amp; emote.
 	    </entry>
 	  </row>
 	  <row>
