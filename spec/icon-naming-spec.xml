@@ -1427,6 +1427,13 @@ The icon used for the 0:-) emote.
 	    </entry>
 	  </row>
 	  <row>
+	  <row>
+	    <entry>face-angry</entry>
+	    <entry>
+The icon used for the X-( emote.
+	    </entry>
+	  </row>
+	  <row>
 	    <entry>face-cool</entry>
 	    <entry>
 The icon used for the B-) emote.
@@ -1457,6 +1464,12 @@ The icon used for the :-* emote.
 	    </entry>
 	  </row>
 	  <row>
+	    <entry>face-laughing</entry>
+	    <entry>
+The icon used for the :-)) emote.
+	    </entry>
+	  </row>
+	  <row>
 	    <entry>face-monkey</entry>
 	    <entry>
 The icon used for the :-(|) emote.
@@ -1478,6 +1491,12 @@ The icon used for the :-P emote.
 	    <entry>face-sad</entry>
 	    <entry>
 The icon used for the :-( emote.
+	    </entry>
+	  </row>
+	  <row>
+	    <entry>face-sick</entry>
+	    <entry>
+The icon used for the :-& emote.
 	    </entry>
 	  </row>
 	  <row>
@@ -1505,9 +1524,27 @@ The icon used for the :-0 emote.
 	    </entry>
 	  </row>
 	  <row>
+	    <entry>face-tired</entry>
+	    <entry>
+The icon used for the |-) emote.
+	    </entry>
+	  </row>
+	  <row>
+	    <entry>face-uncertain</entry>
+	    <entry>
+The icon used for the :-/ emote.
+	    </entry>
+	  </row>
+	  <row>
 	    <entry>face-wink</entry>
 	    <entry>
 The icon used for the ;-) emote.
+	    </entry>
+	  </row>
+	  <row>
+	    <entry>face-worried</entry>
+	    <entry>
+The icon used for the :-S emote.
 	    </entry>
 	  </row>
 	</tbody>
