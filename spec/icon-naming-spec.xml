@@ -815,7 +815,7 @@ application's <quote>Windows</quote> menu.
 	    </entry>
 	  </row>
 	  <row>
-	    <entry>zoom-best-fit</entry>
+	    <entry>zoom-fit-best</entry>
 	    <entry>
 The icon used for the <quote>Best Fit</quote> item in the
 application's <quote>View</quote> menu.
