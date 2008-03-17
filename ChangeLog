@@ -1,3 +1,8 @@
+2008-03-16  Marc-Andre Lureau  <marcandre.lureau@gmail.com>
+
+	* autogen.sh: updated to run "configure" with usual maintainer
+	options.
+
 2007-03-02  Alexander Larsson  <alexl@redhat.com>
 
 	* Makefile.in:
