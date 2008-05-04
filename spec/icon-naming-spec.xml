@@ -256,6 +256,22 @@ in a calendaring application.
 	    </entry>
 	  </row>
 	  <row>
+	    <entry>call-start</entry>
+	    <entry>
+The icon used for initiating or accepting a call. Should be similar
+to the standard cellular call pickup icon, a green handset with ear and
+mouth pieces facing upward.
+	    </entry>
+	  </row>
+	  <row>
+	    <entry>call-stop</entry>
+	    <entry>
+The icon used for stopping a current call. Should be similar
+to the standard cellular call hangup icon, a red handset with ear and
+mouth pieces facing downward.
+	    </entry>
+	  </row>
+	  <row>
 	    <entry>contact-new</entry>
 	    <entry>
 The icon used for the action to create a new contact
@@ -316,13 +332,21 @@ version of a document.
 	  <row>
 	    <entry>document-save</entry>
 	    <entry>
-The icon for the save action.
+The icon for the save action. Should be an arrow pointing down and toward
+a hard disk.
 	    </entry>
 	  </row>
 	  <row>
 	    <entry>document-save-as</entry>
 	    <entry>
 The icon for the save as action.
+	    </entry>
+	  </row>
+	  <row>
+	    <entry>document-send</entry>
+	    <entry>
+The icon for the send action. Should be an arrow pointing up and away from
+a hard disk.
 	    </entry>
 	  </row>
 	  <row>
@@ -970,6 +994,12 @@ The icon used for the desktop's wallpaper preferences.
 	    <entry>system-file-manager</entry>
 	    <entry>
 The icon used for the desktop's file management application.
+	    </entry>
+	  </row>
+	  <row>
+	    <entry>system-software-install</entry>
+	    <entry>
+The icon used for the desktop's software installer application.
 	    </entry>
 	  </row>
 	  <row>
@@ -1718,6 +1748,12 @@ desktop's file manager, and workgroups within the network.
 	    <entry>
 The icon used by the desktop's main menu for accessing places,
 applications, and other features.
+	    </entry>
+	  </row>
+	  <row>
+	    <entry>user-bookmarks</entry>
+	    <entry>
+The icon for the user's special <quote>Bookmarks</quote> place.
 	    </entry>
 	  </row>
 	  <row>
