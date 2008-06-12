@@ -780,6 +780,13 @@ The icon used for the <quote>Search</quote> item in
 the desktop's panel application.
 	    </entry>
 	  </row>
+          <row>
+            <entry>system-shutdown</entry>
+            <entry>
+The icon used for the <quote>Shutdown</quote> item in
+the desktop's panel application.
+            </entry>
+          </row>
 	  <row>
 	    <entry>tools-check-spelling</entry>
 	    <entry>
