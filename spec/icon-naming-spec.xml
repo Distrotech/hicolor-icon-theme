@@ -205,11 +205,15 @@ for a USB mouse device. However, if the more specific item does not exist
 in the current theme, and does exist in a parent theme, the generic icon
 from the current theme is preferred, in order to keep consistent style.
 	  </para>
-	</listitem>
-        <listitem>
-          <para>
-Icons for branded applications should be named the same as the binary
-executable for the application.
+	  <para>
+The <quote>Applications</quote> context should not use this method of
+falling back to more generic icons. An application must either use a
+generic application icon name provided by this specification, or install
+an icon named the same as the executable for running the application. A
+generic desktop application included with the desktop suite, such as the
+calculator or terminal application, should use the generic names provided
+by this specification, as described above in the <quote>Applications</quote>
+context description.
 	  </para>
 	</listitem>
       </itemizedlist>
