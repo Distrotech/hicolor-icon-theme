@@ -33,9 +33,8 @@ work across desktop environments.
     <para>
 This specification aims to solve this problem, by laying out a standard
 naming scheme for icon creation, as well as providing a minimal list of
-must have icons, and a larger list with many more examples to help with
-the creation of extended icons for third party applications, devices,
-and new MIME types.
+must have icons. Addendums to this specification will provide additional
+icon lists for extended sets, such as devices and MIME types.
     </para>
   </sect1>
 
