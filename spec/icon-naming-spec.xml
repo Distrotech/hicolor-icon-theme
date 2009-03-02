@@ -788,6 +788,13 @@ the desktop's panel application.
 	    </entry>
 	  </row>
           <row>
+            <entry>system-reboot</entry>
+            <entry>
+The icon used for the <quote>Reboot</quote> item in
+the desktop's panel application.
+            </entry>
+          </row>
+          <row>
             <entry>system-shutdown</entry>
             <entry>
 The icon used for the <quote>Shutdown</quote> item in
