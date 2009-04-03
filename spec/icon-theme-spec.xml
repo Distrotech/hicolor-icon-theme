@@ -345,7 +345,7 @@
 	    <entry>DisplayName</entry>
 	    <entry>
               A translated UTF8 string that can be used instead of the
-              icon name when the icon is listen in e.g. a user interface.
+              icon name when the icon is listed in e.g. a user interface.
 	    </entry>
 	    <entry>localestring</entry>
 	    <entry>NO</entry>
