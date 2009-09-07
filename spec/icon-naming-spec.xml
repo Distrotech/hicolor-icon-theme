@@ -2108,6 +2108,13 @@ The icon used when a task is due soon.
 The icon used when a task that was due, has been left incomplete.
 	    </entry>
 	  </row>
+    <row>
+      <entry>user-available</entry>
+      <entry>
+The icon used when a user on a chat network is available to
+initiate a conversation with.
+      </entry>
+    </row>
 	  <row>
 	    <entry>user-away</entry>
 	    <entry>
@@ -2126,13 +2133,6 @@ active participant in any chats on the network, for an extended period of time.
 	    <entry>user-offline</entry>
 	    <entry>
 The icon used when a user on a chat network is not available.
-	    </entry>
-	  </row>
-	  <row>
-	    <entry>user-online</entry>
-	    <entry>
-The icon used when a user on a chat network is available to
-initiate a conversation with.
 	    </entry>
 	  </row>
 	  <row>
