@@ -1,4 +1,4 @@
-AC_INIT([hicolor-icon-theme], [0.10])
+AC_INIT([hicolor-icon-theme], [0.11])
 
 AC_PROG_INSTALL
 
