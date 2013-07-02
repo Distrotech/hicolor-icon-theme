@@ -5,8 +5,8 @@
 <article id="index">
   <articleinfo>
     <title>Icon Theme Specification</title>
-    <releaseinfo>Version 0.11</releaseinfo>
-    <date>February 7 2006</date>
+    <releaseinfo>Version 0.13</releaseinfo>
+    <date>July 2 2013</date>
     <authorgroup>
       <author>
 	<firstname>Alexander</firstname>
@@ -82,6 +82,24 @@
 	  </para>
 	</listitem>
       </varlistentry>
+      <varlistentry>
+	<term>Icon scale</term>
+	<listitem>
+	  <para>
+          On very high density (high dpi) screens the UI is often
+          scaled to avoid the UI being so small it is hard to see. In
+          order to support this icons can have a target scale,
+          describing what scale factor they are designed for.
+          </para>
+          <para>For instance, an icon with a directory size of 48 but
+          scale 2x would be 96x96 pixels, but designed to have the
+          same level of detail as a 48x48 icon at scale 1x. This can
+          be used on high density displays where a 48x48 icon would be
+          too small (or ugly upscaled) and a normal 96x96 icon would
+          have a lot of detail that is hard to see.
+	  </para>
+	</listitem>
+      </varlistentry>
     </variablelist>
   </sect1>
 
@@ -126,7 +144,7 @@
     <para>
     In the theme directory are also a set of subdirectories containing
     image files. Each directory contains icons designed for a certain
-    nominal icon size, as described by the index.theme file. The
+    nominal icon size and scale, as described by the index.theme file. The
     subdirectories are allowed to be several levels deep, e.g. the
     subdirectory "48x48/apps" in the theme "hicolor" would end up at
     $basedir/hicolor/48x48/apps.
@@ -214,6 +232,18 @@
 	    <entry>YES</entry>
 	  </row>
 	  <row>
+	    <entry>ScaledDirectories</entry>
+	    <entry>
+             Additional list of subdirectories for this theme, in addition
+             to the ones in Directories. These directories should only be
+             read by implementations supporting scaled directories and
+             was added to keep compatibility with old implementations
+             that don't support these.
+	    </entry>
+	    <entry>strings</entry>
+	    <entry>NO</entry>
+	  </row>
+	  <row>
 	    <entry>Hidden</entry>
 	    <entry>
             Whether to hide the theme in a theme selection user interface.
@@ -256,10 +286,22 @@
 	  <row>
 	    <entry>Size</entry>
 	    <entry>
-              Nominal size of the icons in this directory.
+              Nominal (unscaled) size of the icons in this directory.
 	    </entry>
 	    <entry>integer</entry>
 	    <entry>YES</entry>
+	  </row>
+	  <row>
+	    <entry>Scale</entry>
+	    <entry>
+              Target scale of of the icons in this
+              directory. Defaults to the value 1 if not present.
+              Any directory with a scale other than 1 should be
+              listed in the ScaledDirectories list rather than
+              Directories for backwards compatibility.
+	    </entry>
+	    <entry>integer</entry>
+	    <entry>NO</entry>
 	  </row>
 	  <row>
 	    <entry>Context</entry>
@@ -285,7 +327,7 @@
 	  <row>
 	    <entry>MaxSize</entry>
 	    <entry>
-              Specifies the maximum size that the icons in this
+              Specifies the maximum (unscaled) size that the icons in this
               directory can be scaled to. Defaults to the value
               of Size if not present.
 	    </entry>
@@ -296,7 +338,7 @@
 	  <row>
 	    <entry>MinSize</entry>
 	    <entry>
-              Specifies the minimum size that the icons in this
+              Specifies the minimum (unscaled) size that the icons in this
               directory can be scaled to. Defaults to the value
               of Size if not present.
 	    </entry>
@@ -308,7 +350,7 @@
 	    <entry>Threshold</entry>
 	    <entry>
               The icons in this directory can be used if the size differ
-              at most this much from the desired size. Defaults to 2 if not
+              at most this much from the desired (unscaled) size. Defaults to 2 if not
               present.
 	    </entry>
 	    <entry>integer</entry>
@@ -447,7 +489,7 @@
     The icon lookup mechanism has two global settings, the list of
     base directories and the internal name of the current theme. Given
     these we need to specify how to look up an icon file from the icon
-    name and the nominal size.
+    name, the nominal size and the scale.
     </para>
     <para>
     The lookup is done first in the current theme, and then
@@ -473,19 +515,19 @@
     The exact algorithm (in pseudocode) for looking up an icon in a theme
     (if the implementation supports SVG) is:
     <programlisting>
-FindIcon(icon, size) {
-  filename = FindIconHelper(icon, size, user selected theme);
+FindIcon(icon, size, scale) {
+  filename = FindIconHelper(icon, size, scale, user selected theme);
   if filename != none
     return filename
 
-  filename = FindIconHelper(icon, size, "hicolor");
+  filename = FindIconHelper(icon, size, scale, "hicolor");
   if filename != none
     return filename
 
   return LookupFallbackIcon (icon)
 }
-FindIconHelper(icon, size, theme) {
-  filename = LookupIcon (icon, size, theme)
+FindIconHelper(icon, size, scale, theme) {
+  filename = LookupIcon (icon, size, scale, theme)
   if filename != none
     return filename
 
@@ -493,7 +535,7 @@ FindIconHelper(icon, size, theme) {
     parents = theme.parents
 
   for parent in parents {
-    filename = FindIconHelper (icon, size, parent)
+    filename = FindIconHelper (icon, size, scale, parent)
     if filename != none
       return filename
   }
@@ -502,11 +544,11 @@ FindIconHelper(icon, size, theme) {
      </programlisting>
      With the following helper functions:
      <programlisting>
-LookupIcon (iconname, size, theme) {
+LookupIcon (iconname, size, scale, theme) {
   for each subdir in $(theme subdir list) {
     for each directory in $(basename list) {
       for extension in ("png", "svg", "xpm") {
-        if DirectoryMatchesSize(subdir, size) {
+        if DirectoryMatchesSize(subdir, size, scale) {
           filename = directory/$(themename)/subdir/iconname.extension
           if exist filename
 	    return filename
@@ -519,9 +561,9 @@ LookupIcon (iconname, size, theme) {
     for each directory in $(basename list) {
       for extension in ("png", "svg", "xpm") {
         filename = directory/$(themename)/subdir/iconname.extension
-        if exist filename and DirectorySizeDistance(subdir, size) &lt; minimal_size {
+        if exist filename and DirectorySizeDistance(subdir, size, scale) &lt; minimal_size {
 	   closest_filename = filename
-	   minimal_size = DirectorySizeDistance(subdir, size)
+	   minimal_size = DirectorySizeDistance(subdir, size, scale)
         }
       }
     }
@@ -541,8 +583,10 @@ LookupFallbackIcon (iconname) {
   return none
 }
 
-DirectoryMatchesSize(subdir, iconsize) {
+DirectoryMatchesSize(subdir, iconsize, iconscale) {
   read Type and size data from subdir
+  if Scale != iconscale
+     return False;
   if Type is Fixed
     return Size == iconsize
   if Type is Scaled
@@ -551,21 +595,21 @@ DirectoryMatchesSize(subdir, iconsize) {
     return Size - Threshold &lt;= iconsize &lt;= Size + Threshold
 }
 
-DirectorySizeDistance(subdir, size) {
+DirectorySizeDistance(subdir, iconsize, iconscale) {
   read Type and size data from subdir
   if Type is Fixed
-    return abs(Size - iconsize)
+    return abs(Size*Scale - iconsize*iconscale)
   if Type is Scaled
-    if iconsize &lt; MinSize
-        return MinSize - iconsize
-    if iconsize &gt; MaxSize
-        return iconsize - MaxSize
+    if iconsize*iconscale &lt; MinSize*Scale
+        return MinSize*Scale - iconsize*iconscale
+    if iconsize*iconscale &gt; MaxSize*Scale
+        return iconsize*iconscale - MaxSize*Scale
     return 0
   if Type is Threshold
-    if iconsize &lt; Size - Threshold
-        return MinSize - iconsize
-    if iconsize &gt; Size + Threshold
-        return iconsize - MaxSize
+    if iconsize*iconscale &lt; (Size - Threshold)*Scale
+        return MinSize*Scale - iconsize*iconscale
+    if iconsize*iconsize &gt; (Size + Threshold)*Scale
+        return iconsize*iconsize - MaxSize*Scale
     return 0
 }
 </programlisting>
@@ -578,12 +622,12 @@ DirectorySizeDistance(subdir, size) {
     function that finds the first of a list of icon names in the inheritance
     hierarchy. I.E. It would look something like this:
 <programlisting>
-FindBestIcon(iconList, size) {
-  filename = FindBestIconHelper(iconList, size, user selected theme);
+FindBestIcon(iconList, size, scale) {
+  filename = FindBestIconHelper(iconList, size, scale, user selected theme);
   if filename != none
     return filename
 
-  filename = FindBestIconHelper(iconList, size, "hicolor");
+  filename = FindBestIconHelper(iconList, size, scale, "hicolor");
   if filename != none
     return filename
 
@@ -594,7 +638,7 @@ FindBestIcon(iconList, size) {
   }
   return none;
 }
-FindBestIconHelper(iconList, size, theme) {
+FindBestIconHelper(iconList, size, scale, theme) {
   for icon in iconList {
     filename = LookupIcon (icon, size, theme)
     if filename != none
@@ -605,7 +649,7 @@ FindBestIconHelper(iconList, size, theme) {
     parents = theme.parents
 
   for parent in parents {
-    filename = FindBestIconHelper (iconList, size, parent)
+    filename = FindBestIconHelper (iconList, size, scale, parent)
     if filename != none
       return filename
   }
@@ -627,7 +671,7 @@ Name[sv]=Björk
 Comment=Icon theme with a wooden look
 Comment[sv]=Träinspirerat ikontema
 Inherits=wood,default
-Directories=48x48/apps,48x48/mimetypes,32x32/apps,scalable/apps,scalable/mimetypes
+Directories=48x48/apps,48x48@2/apps48x48/mimetypes,32x32/apps,32x32@2/apps,scalable/apps,scalable/mimetypes
 
 [scalable/apps]
 Size=48
@@ -648,8 +692,20 @@ Size=32
 Type=Fixed
 Context=Applications
 
+[32x32@2/apps]
+Size=32
+Scale=2
+Type=Fixed
+Context=Applications
+
 [48x48/apps]
 Size=48
+Type=Fixed
+Context=Applications
+
+[48x48@2/apps]
+Size=48
+Scale=2
 Type=Fixed
 Context=Applications
 
@@ -664,7 +720,9 @@ birch/scalable/apps/mozilla.svg
 birch/scalable/mimetypes/mime_text_plain.svg
 birch/scalable/mimetypes/mime_text_plain.icon
 birch/48x48/apps/mozilla.png
+birch/48x48@2/apps/mozilla.png
 birch/32x32/apps/mozilla.png
+birch/32x32@2/apps/mozilla.png
 birch/48x48/mimetypes/mime_text_plain.png
 birch/48x48/mimetypes/mime_text_plain.icon</programlisting>
 Where birch/scalable/mimetypes/mime_text_plain.icon contains:
@@ -741,6 +799,18 @@ AttachPoints=20,20|40,40|50,10|10,50</programlisting>
   
   <appendix id="changes">
     <title>Change history</title>
+    <formalpara>
+      <title>Version 0.13, July 2 2013, Alexander Larsson</title>
+      <para>
+	<itemizedlist>
+	  <listitem>
+	    <para>
+            Add icon Scales.
+	    </para>
+	  </listitem>
+	</itemizedlist>
+      </para>
+    </formalpara>
     <formalpara>
       <title>Version 0.12, 24 December 2006, Octavio Alvarez</title>    
       <para>
