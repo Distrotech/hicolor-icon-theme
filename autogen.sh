@@ -35,7 +35,7 @@ if test -z "$*"; then
         echo "to pass any to it, please specify them on the $0 command line."
 fi
 
-autoconf || echo "autoconf failed - version 2.5x is probably required"
+autoreconf --force --install || echo "autoconf failed - version 2.5x is probably required"
 
 cd $ORIGDIR
 
