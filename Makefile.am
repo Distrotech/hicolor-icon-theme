@@ -7,7 +7,7 @@ STOCK_SUBS = chart code data form image io media navigation net object table tex
 themedir = $(datadir)/icons/hicolor
 dist_theme_DATA = index.theme
 
-EXTRA_DIST = COPYING README autogen.sh
+EXTRA_DIST = COPYING README NEWS autogen.sh
 
 install-data-hook:
 	mkdir -p $(DESTDIR)$(themedir)

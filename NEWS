@@ -1,0 +1,5 @@
+New in 0.14:
+
+ * A new icon subdirectory symbolic/apps is available for symbolic
+   application icons. It similar to scalable, except it has a target
+   design size of 16, which is what symbolic icons use.
