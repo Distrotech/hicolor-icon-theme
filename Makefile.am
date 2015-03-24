@@ -21,3 +21,4 @@ install-data-hook:
 	    fi \
 	  done \
 	done
+	mkdir -p $(DESTDIR)$(datadir)/icons/hicolor/symbolic/apps
